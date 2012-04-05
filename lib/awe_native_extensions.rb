@@ -1,0 +1,1 @@
+require 'awe_native_extensions/aweext'

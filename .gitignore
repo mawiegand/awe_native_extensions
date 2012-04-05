@@ -1,0 +1,5 @@
+.DS_Store
+ext/awe_native_extensions/*.cpp
+ext/awe_native_extensions/*.o
+ext/awe_native_extensions/Makefile
+*.gem
