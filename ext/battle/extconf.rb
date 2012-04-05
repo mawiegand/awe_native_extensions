@@ -1,16 +1,16 @@
 require 'mkmf'
 
 #copy the source files into this folder
-FileUtils.cp(Dir['../src/**/*.cpp'], '.')
+FileUtils.cp(Dir['../src/battle/**/*.cpp'], '.')
 
 #execute swig to generate the wrapper classes
-%x[swig -ruby -c++ aweext.i]
+%x[swig -ruby -c++ battle.i]
 
 LIBDIR      = Config::CONFIG['libdir']
 INCLUDEDIR  = Config::CONFIG['includedir']
  
 HEADER_DIRS = [
-  "../src",
+  "../src/battle",
 
   # First search /opt/local for macports
   '/opt/local/include',
@@ -41,4 +41,4 @@ LIB_DIRS = [
  
 dir_config('stree', HEADER_DIRS, LIB_DIRS)
 
-create_makefile('awe_native_extensions/aweext')
+create_makefile('awe_native_extensions/battle')

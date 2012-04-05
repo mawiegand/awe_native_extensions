@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email       = 'info@5dlab.com'
   s.files       = 	Dir.glob('lib/**/*.rb') +
   					Dir.glob('ext/**/*.{cpp,h,rb,i}')
-  s.extensions = ['ext/aweext/extconf.rb']
+  s.extensions = ['ext/battle/extconf.rb']
   s.homepage    =
     'https://github.com/wackadoo/awe_native_extensions'
 end

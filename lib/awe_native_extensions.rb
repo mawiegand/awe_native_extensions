@@ -1,1 +1,1 @@
-require 'awe_native_extensions/aweext'
+require 'awe_native_extensions/battle'
