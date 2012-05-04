@@ -18,6 +18,8 @@ public:
 	size_t startSizeOfCategory(int category) const;
 	bool hasOfUnitsCategory(int category) const;
 	
+  int numKills() const;
+	
 	int playerId;
 	std::vector<Unit*> units;
 };
