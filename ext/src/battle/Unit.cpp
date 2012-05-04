@@ -19,10 +19,6 @@ bool Unit::valid() const {
 	return unitTypeId >= 0 && unitCategoryId >= 0;
 }
 
-void Unit::foo() {
-	awePtrCheck(0);
-}
-
 void Unit::applyDamage(Battle& battle) {
 	/*double enemyFactionStartSize = (double) battle.enemyFactionStartSize(myFaction);
 	

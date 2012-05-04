@@ -12,7 +12,6 @@ public:
 	
 	bool valid() const;
 	
-	void foo();
 	void applyDamage(Battle& battle);
 	
 #pragma mark unit state information
@@ -35,8 +34,6 @@ public:
 	double criticalDamage;
 	///criticalProbability the probability for a unit of this type to execute a critical strike
 	double criticalProbability;
-	///attackerBonusDamage the additional amount of damage that a unit of this type deals if it is in an attacking force
-	double attackerBonusDamage;
 	
 	///hitpoints the amount of healthpoints that each unit of this type has
 	double hitpoints;

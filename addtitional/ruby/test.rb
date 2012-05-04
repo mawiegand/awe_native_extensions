@@ -1,4 +1,4 @@
 require 'awe_native_extensions'
 
-a = Battle::Units.new
+a = Battle::Unit.new
 puts "worked"

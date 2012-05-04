@@ -14,6 +14,15 @@ private:
 	std::vector<int> prioritiesOnSuccess;
 	
 	int testCategoryId;
+	double minProportion;
+	double minExponent;
+	double minFactor;
+	
+	double normalFactor;
+	double normalReduction;
+	
+	double maxPropotion;
+	double maxProbability;
 };
 
 
