@@ -19,11 +19,12 @@ public:
 	
 	size_t numUnitsAlive() const;
 	
-	bool hasOfUnitsCategory(int category) const;
+	bool hasUnitsOfCategory(int category) const;
+	bool hasLivingUnitsOfCategory(int category) const;
 	Unit* getFirstAliveUnitOfCategory(int category);
-	void getAllUnitsOfCategory(int category, std::vector<Unit*> result);
-	void getAllAliveUnitsOfCategory(int category, std::vector<Unit*> result);
-	Army* getAllAliveUnitsOfCategory(int category);
+	void getAllUnitsOfCategory(int category, std::vector<Unit*>& result);
+	void getAllLivingUnitsOfCategory(int category, std::vector<Unit*>& result);
+	Army* getAllLivingUnitsOfCategory(int category);
 	
 	int numKills() const;
 	

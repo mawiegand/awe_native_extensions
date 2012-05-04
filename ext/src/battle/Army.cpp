@@ -58,11 +58,22 @@ size_t Army::numUnitsAlive() const {
 	return re;
 }
 
-bool Army::hasOfUnitsCategory(int category) const {
+bool Army::hasUnitsOfCategory(int category) const {
 	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		if ((*it)->numUnitsAtStart > 0 && (*it)->unitCategoryId == category) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Army::hasLivingUnitsOfCategory(int category) const {
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		if ((*it)->numUnitsAtStart > 0 && (*it)->unitCategoryId == category && (*it)->numUnitsAtStart > (*it)->numDeaths) {
 			return true;
 		}
 	}
@@ -83,7 +94,7 @@ Unit* Army::getFirstAliveUnitOfCategory(int category) {
 	return 0;
 }
 
-void Army::getAllUnitsOfCategory(int category, std::vector<Unit*> result) {
+void Army::getAllUnitsOfCategory(int category, std::vector<Unit*>& result) {
 	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
@@ -93,19 +104,25 @@ void Army::getAllUnitsOfCategory(int category, std::vector<Unit*> result) {
 	}
 }
 
-void Army::getAllAliveUnitsOfCategory(int category, std::vector<Unit*> result) {
+void Army::getAllLivingUnitsOfCategory(int category, std::vector<Unit*>& result) {
 	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		if ((*it)->unitCategoryId == category && (*it)->numUnitsAtStart > (*it)->numDeaths) {
+			logMessage("alive added");
+			logMessage(**it);
 			result.push_back(*it);
 		}
 	}
 }
 
-Army* Army::getAllAliveUnitsOfCategory(int category) {
+Army* Army::getAllLivingUnitsOfCategory(int category) {
 	Army* re = new Army(-1);
-	getAllAliveUnitsOfCategory(category, re->units);
+	logMessage("created dummy army");
+	getAllLivingUnitsOfCategory(category, re->units);
+	logMessage("filled dummy army");
+	logMessage(*re);
+	logMessage("dummy army done");
 	return re;
 }
 

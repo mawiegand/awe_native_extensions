@@ -22,7 +22,7 @@ public:
 #pragma mark unit state information
 	size_t numUnitsAtStart;
 	size_t numDeaths;
-	size_t numHits;
+	double numHits;
 	size_t numKills;
 	double newXp;
 #pragma mark -

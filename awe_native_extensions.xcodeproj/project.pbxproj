@@ -74,6 +74,7 @@
 		B9B5699015540B8F003E8E40 /* DataException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataException.cpp; sourceTree = "<group>"; };
 		B9B56993155424DD003E8E40 /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unit.cpp; sourceTree = "<group>"; };
 		B9B56994155424DD003E8E40 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		B9B5699B15546DE4003E8E40 /* MemoryManagement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryManagement.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +175,7 @@
 				B9B569591553F3C8003E8E40 /* Random.cpp */,
 				B9B5695A1553F3C8003E8E40 /* Random.h */,
 				B9B56987155408E4003E8E40 /* ErrorHandling.h */,
+				B9B5699B15546DE4003E8E40 /* MemoryManagement.h */,
 			);
 			path = util;
 			sourceTree = "<group>";

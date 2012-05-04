@@ -76,7 +76,7 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 						logMessage("determine current target category");
 						std::vector<int>::const_iterator targetIt;
 						for (targetIt = attackPriority.begin(); targetIt != attackPriority.end(); targetIt++) {
-							if (enemyArmy->getFirstAliveUnitOfCategory(*targetIt) != 0) {
+							if (enemyArmy->hasLivingUnitsOfCategory(*targetIt)) {
 								targetCategory = (*targetIt);
 							}
 						}
@@ -86,10 +86,13 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 				//if there is a target damage it
 				if (targetCategory != -1) {
 					logMessage("appling damage");
+					logMessage(targetCategory);
 					damagePossible = true;
 					//lets apply the damage
-					Army* targets = enemyArmy->getAllAliveUnitsOfCategory(targetCategory);
+					Army* targets = enemyArmy->getAllLivingUnitsOfCategory(targetCategory);
+					logMessage(*targets);
 					(*unitIt)->applyDamage(superiorityBonus, targets);
+					delete targets;
 				}
 				
 			}

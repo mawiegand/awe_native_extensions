@@ -44,7 +44,7 @@ bool Faction::hasOfUnitsCategory(int category) const {
 	std::vector<Army*>::const_iterator it;
 	for (it = armies.begin(); it != armies.end(); it++) {
 		awePtrCheck(*it);
-		if ((*it)->hasOfUnitsCategory(category)) {
+		if ((*it)->hasUnitsOfCategory(category)) {
 			return true;
 		}
 	}
