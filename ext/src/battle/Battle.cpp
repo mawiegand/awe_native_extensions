@@ -39,6 +39,7 @@ UnitCategory* Battle::getUnitCategoryById(int id) {
 			return (*it);
 		}
 	}
+	aweError("could not find category for id");
 	return 0;
 }
 size_t Battle::numUnitCategories() const {
