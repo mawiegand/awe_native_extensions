@@ -6,6 +6,9 @@ FileUtils.cp(Dir['../src/battle/**/*.cpp'], '.')
 #execute swig to generate the wrapper classes
 %x[swig -ruby -c++ battle.i]
 
+raise "swig failed not create wrapper class" if (!File.exist?("battle_wrap.cxx"))
+
+
 LIBDIR      = Config::CONFIG['libdir']
 INCLUDEDIR  = Config::CONFIG['includedir']
  

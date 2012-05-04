@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9B5695C1553F3C8003E8E40 /* AlwaysSameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */; };
+		B9B5695D1553F3C8003E8E40 /* Army.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569491553F3C8003E8E40 /* Army.cpp */; };
+		B9B5695E1553F3C8003E8E40 /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694B1553F3C8003E8E40 /* Battle.cpp */; };
+		B9B5695F1553F3C8003E8E40 /* BattleCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */; };
+		B9B569601553F3C8003E8E40 /* CavalryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */; };
+		B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569511553F3C8003E8E40 /* Faction.cpp */; };
+		B9B569631553F3C8003E8E40 /* Units.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569561553F3C8003E8E40 /* Units.cpp */; };
+		B9B569641553F3C8003E8E40 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569591553F3C8003E8E40 /* Random.cpp */; };
+		B9B5697A1553FE75003E8E40 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569771553FE6E003E8E40 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B9B569011553F330003E8E40 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B9B569171553F376003E8E40 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B9B569031553F330003E8E40 /* awe_native_extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awe_native_extensions; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B569191553F376003E8E40 /* battle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = battle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B569431553F3C8003E8E40 /* battle.i */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c.preprocessed; path = battle.i; sourceTree = "<group>"; };
+		B9B569441553F3C8003E8E40 /* extconf.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = extconf.rb; sourceTree = "<group>"; };
+		B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlwaysSameTest.cpp; sourceTree = "<group>"; };
+		B9B569481553F3C8003E8E40 /* AlwaysSameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysSameTest.h; sourceTree = "<group>"; };
+		B9B569491553F3C8003E8E40 /* Army.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Army.cpp; sourceTree = "<group>"; };
+		B9B5694A1553F3C8003E8E40 /* Army.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Army.h; sourceTree = "<group>"; };
+		B9B5694B1553F3C8003E8E40 /* Battle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Battle.cpp; sourceTree = "<group>"; };
+		B9B5694C1553F3C8003E8E40 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
+		B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCalculator.cpp; sourceTree = "<group>"; };
+		B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCalculator.h; sourceTree = "<group>"; };
+		B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CavalryTest.cpp; sourceTree = "<group>"; };
+		B9B569501553F3C8003E8E40 /* CavalryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CavalryTest.h; sourceTree = "<group>"; };
+		B9B569511553F3C8003E8E40 /* Faction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Faction.cpp; sourceTree = "<group>"; };
+		B9B569521553F3C8003E8E40 /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
+		B9B569541553F3C8003E8E40 /* PriorityTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityTest.h; sourceTree = "<group>"; };
+		B9B569551553F3C8003E8E40 /* UnitCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCategory.h; sourceTree = "<group>"; };
+		B9B569561553F3C8003E8E40 /* Units.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Units.cpp; sourceTree = "<group>"; };
+		B9B569571553F3C8003E8E40 /* Units.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Units.h; sourceTree = "<group>"; };
+		B9B569591553F3C8003E8E40 /* Random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
+		B9B5695A1553F3C8003E8E40 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
+		B9B569771553FE6E003E8E40 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B9B569791553FE6E003E8E40 /* test.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = test.rb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9B569001553F330003E8E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9B569161553F376003E8E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9B568F81553F330003E8E40 = {
+			isa = PBXGroup;
+			children = (
+				B9B569041553F330003E8E40 /* Products */,
+				B9B569411553F3C8003E8E40 /* ext */,
+				B9B569741553FE6E003E8E40 /* addtitional */,
+			);
+			sourceTree = "<group>";
+		};
+		B9B569041553F330003E8E40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569031553F330003E8E40 /* awe_native_extensions */,
+				B9B569191553F376003E8E40 /* battle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9B569411553F3C8003E8E40 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569421553F3C8003E8E40 /* battle */,
+				B9B569451553F3C8003E8E40 /* src */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		B9B569421553F3C8003E8E40 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569431553F3C8003E8E40 /* battle.i */,
+				B9B569441553F3C8003E8E40 /* extconf.rb */,
+			);
+			path = battle;
+			sourceTree = "<group>";
+		};
+		B9B569451553F3C8003E8E40 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569461553F3C8003E8E40 /* battle */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B9B569461553F3C8003E8E40 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569541553F3C8003E8E40 /* PriorityTest.h */,
+				B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */,
+				B9B569481553F3C8003E8E40 /* AlwaysSameTest.h */,
+				B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */,
+				B9B569501553F3C8003E8E40 /* CavalryTest.h */,
+				B9B569551553F3C8003E8E40 /* UnitCategory.h */,
+				B9B569561553F3C8003E8E40 /* Units.cpp */,
+				B9B569571553F3C8003E8E40 /* Units.h */,
+				B9B569491553F3C8003E8E40 /* Army.cpp */,
+				B9B5694A1553F3C8003E8E40 /* Army.h */,
+				B9B569511553F3C8003E8E40 /* Faction.cpp */,
+				B9B569521553F3C8003E8E40 /* Faction.h */,
+				B9B5694B1553F3C8003E8E40 /* Battle.cpp */,
+				B9B5694C1553F3C8003E8E40 /* Battle.h */,
+				B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */,
+				B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */,
+				B9B569581553F3C8003E8E40 /* util */,
+			);
+			path = battle;
+			sourceTree = "<group>";
+		};
+		B9B569581553F3C8003E8E40 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569591553F3C8003E8E40 /* Random.cpp */,
+				B9B5695A1553F3C8003E8E40 /* Random.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		B9B569741553FE6E003E8E40 /* addtitional */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569751553FE6E003E8E40 /* cpp */,
+				B9B569781553FE6E003E8E40 /* ruby */,
+			);
+			path = addtitional;
+			sourceTree = "<group>";
+		};
+		B9B569751553FE6E003E8E40 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569761553FE6E003E8E40 /* battle */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		B9B569761553FE6E003E8E40 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569771553FE6E003E8E40 /* main.cpp */,
+			);
+			path = battle;
+			sourceTree = "<group>";
+		};
+		B9B569781553FE6E003E8E40 /* ruby */ = {
+			isa = PBXGroup;
+			children = (
+				B9B569791553FE6E003E8E40 /* test.rb */,
+			);
+			path = ruby;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9B569021553F330003E8E40 /* awe_native_extensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9B5690D1553F330003E8E40 /* Build configuration list for PBXNativeTarget "awe_native_extensions" */;
+			buildPhases = (
+				B9B568FF1553F330003E8E40 /* Sources */,
+				B9B569001553F330003E8E40 /* Frameworks */,
+				B9B569011553F330003E8E40 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = awe_native_extensions;
+			productName = awe_native_extensions;
+			productReference = B9B569031553F330003E8E40 /* awe_native_extensions */;
+			productType = "com.apple.product-type.tool";
+		};
+		B9B569181553F376003E8E40 /* battle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9B569201553F376003E8E40 /* Build configuration list for PBXNativeTarget "battle" */;
+			buildPhases = (
+				B9B569151553F376003E8E40 /* Sources */,
+				B9B569161553F376003E8E40 /* Frameworks */,
+				B9B569171553F376003E8E40 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = battle;
+			productName = battle;
+			productReference = B9B569191553F376003E8E40 /* battle */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9B568FA1553F330003E8E40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = B9B568FD1553F330003E8E40 /* Build configuration list for PBXProject "awe_native_extensions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B9B568F81553F330003E8E40;
+			productRefGroup = B9B569041553F330003E8E40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9B569021553F330003E8E40 /* awe_native_extensions */,
+				B9B569181553F376003E8E40 /* battle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9B568FF1553F330003E8E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9B569151553F376003E8E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9B5695C1553F3C8003E8E40 /* AlwaysSameTest.cpp in Sources */,
+				B9B5695D1553F3C8003E8E40 /* Army.cpp in Sources */,
+				B9B5695E1553F3C8003E8E40 /* Battle.cpp in Sources */,
+				B9B5695F1553F3C8003E8E40 /* BattleCalculator.cpp in Sources */,
+				B9B569601553F3C8003E8E40 /* CavalryTest.cpp in Sources */,
+				B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */,
+				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
+				B9B569631553F3C8003E8E40 /* Units.cpp in Sources */,
+				B9B569641553F3C8003E8E40 /* Random.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B9B5690B1553F330003E8E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B9B5690C1553F330003E8E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B9B5690E1553F330003E8E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B9B5690F1553F330003E8E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B9B569211553F376003E8E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/ext/src/battle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B9B569221553F376003E8E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/ext/src/battle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9B568FD1553F330003E8E40 /* Build configuration list for PBXProject "awe_native_extensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9B5690B1553F330003E8E40 /* Debug */,
+				B9B5690C1553F330003E8E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9B5690D1553F330003E8E40 /* Build configuration list for PBXNativeTarget "awe_native_extensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9B5690E1553F330003E8E40 /* Debug */,
+				B9B5690F1553F330003E8E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9B569201553F376003E8E40 /* Build configuration list for PBXNativeTarget "battle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9B569211553F376003E8E40 /* Debug */,
+				B9B569221553F376003E8E40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9B568FA1553F330003E8E40 /* Project object */;
+}
