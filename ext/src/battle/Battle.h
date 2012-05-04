@@ -34,10 +34,19 @@ public:
 template<class OStream>
 OStream& operator<<(OStream& out, const Battle& battle) {
 	out<<"Battle( \n";
+	out<<"\t"<<"categories="<<"\n";
+	{
+		std::vector<UnitCategory*>::const_iterator it;
+		for (it = battle.categories.begin(); it != battle.categories.end(); it++) {
+			out<<(*(*it))<<"\n";
+		}
+	}
 	out<<"\t"<<"factions="<<"\n";
-	std::vector<Faction*>::const_iterator it;
-	for (it = battle.factions.begin(); it != battle.factions.end(); it++) {
-		out<<(*(*it))<<"\n";
+	{
+		std::vector<Faction*>::const_iterator it;
+		for (it = battle.factions.begin(); it != battle.factions.end(); it++) {
+			out<<(*(*it))<<"\n";
+		}
 	}
 	out<<")\n";
     return out;

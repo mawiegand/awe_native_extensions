@@ -1,6 +1,6 @@
 #include <UnitCategory.h>
 
-UnitCategory::UnitCategory(int categoryId) : categoryId(categoryId) {
+UnitCategory::UnitCategory(int categoryId) : categoryId(categoryId), test(0) {
 
 }
 
