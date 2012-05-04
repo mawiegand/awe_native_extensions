@@ -3,13 +3,13 @@
 
 #include <PriorityTest.h>
 
-class AlwaysSameTest : PriorityTest {
+class NoTest : PriorityTest {
 public:
-	AlwaysSameTest();
+	NoTest();
 	void pushCategoryToPriority(int category);
 	virtual const std::vector<int>& test(const Battle& battle) const;
 private:
-	std::vector<int> priority;
+	std::vector<int> priorities;
 };
 
 #endif

@@ -1,4 +1,4 @@
 require 'awe_native_extensions'
 
-a = Battle::BlaBla.new
+a = Battle::Units.new
 puts a.foo()

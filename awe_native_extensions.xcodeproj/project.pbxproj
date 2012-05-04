@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9B5695C1553F3C8003E8E40 /* AlwaysSameTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */; };
+		B9B5695C1553F3C8003E8E40 /* NoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569471553F3C8003E8E40 /* NoTest.cpp */; };
 		B9B5695D1553F3C8003E8E40 /* Army.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569491553F3C8003E8E40 /* Army.cpp */; };
 		B9B5695E1553F3C8003E8E40 /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694B1553F3C8003E8E40 /* Battle.cpp */; };
 		B9B5695F1553F3C8003E8E40 /* BattleCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */; };
-		B9B569601553F3C8003E8E40 /* CavalryTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */; };
+		B9B569601553F3C8003E8E40 /* LineSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */; };
 		B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569511553F3C8003E8E40 /* Faction.cpp */; };
 		B9B569631553F3C8003E8E40 /* Units.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569561553F3C8003E8E40 /* Units.cpp */; };
 		B9B569641553F3C8003E8E40 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569591553F3C8003E8E40 /* Random.cpp */; };
@@ -45,16 +45,16 @@
 		B9B569191553F376003E8E40 /* battle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = battle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B569431553F3C8003E8E40 /* battle.i */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c.preprocessed; path = battle.i; sourceTree = "<group>"; };
 		B9B569441553F3C8003E8E40 /* extconf.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = extconf.rb; sourceTree = "<group>"; };
-		B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlwaysSameTest.cpp; sourceTree = "<group>"; };
-		B9B569481553F3C8003E8E40 /* AlwaysSameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysSameTest.h; sourceTree = "<group>"; };
+		B9B569471553F3C8003E8E40 /* NoTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoTest.cpp; sourceTree = "<group>"; };
+		B9B569481553F3C8003E8E40 /* NoTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NoTest.h; sourceTree = "<group>"; };
 		B9B569491553F3C8003E8E40 /* Army.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Army.cpp; sourceTree = "<group>"; };
 		B9B5694A1553F3C8003E8E40 /* Army.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Army.h; sourceTree = "<group>"; };
 		B9B5694B1553F3C8003E8E40 /* Battle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Battle.cpp; sourceTree = "<group>"; };
 		B9B5694C1553F3C8003E8E40 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Battle.h; sourceTree = "<group>"; };
 		B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleCalculator.cpp; sourceTree = "<group>"; };
 		B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCalculator.h; sourceTree = "<group>"; };
-		B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CavalryTest.cpp; sourceTree = "<group>"; };
-		B9B569501553F3C8003E8E40 /* CavalryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CavalryTest.h; sourceTree = "<group>"; };
+		B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSizeTest.cpp; sourceTree = "<group>"; };
+		B9B569501553F3C8003E8E40 /* LineSizeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = LineSizeTest.h; sourceTree = "<group>"; };
 		B9B569511553F3C8003E8E40 /* Faction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Faction.cpp; sourceTree = "<group>"; };
 		B9B569521553F3C8003E8E40 /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
 		B9B569541553F3C8003E8E40 /* PriorityTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityTest.h; sourceTree = "<group>"; };
@@ -134,10 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				B9B569541553F3C8003E8E40 /* PriorityTest.h */,
-				B9B569471553F3C8003E8E40 /* AlwaysSameTest.cpp */,
-				B9B569481553F3C8003E8E40 /* AlwaysSameTest.h */,
-				B9B5694F1553F3C8003E8E40 /* CavalryTest.cpp */,
-				B9B569501553F3C8003E8E40 /* CavalryTest.h */,
+				B9B569471553F3C8003E8E40 /* NoTest.cpp */,
+				B9B569481553F3C8003E8E40 /* NoTest.h */,
+				B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */,
+				B9B569501553F3C8003E8E40 /* LineSizeTest.h */,
 				B9B569551553F3C8003E8E40 /* UnitCategory.h */,
 				B9B569561553F3C8003E8E40 /* Units.cpp */,
 				B9B569571553F3C8003E8E40 /* Units.h */,
@@ -272,11 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B5695C1553F3C8003E8E40 /* AlwaysSameTest.cpp in Sources */,
+				B9B5695C1553F3C8003E8E40 /* NoTest.cpp in Sources */,
 				B9B5695D1553F3C8003E8E40 /* Army.cpp in Sources */,
 				B9B5695E1553F3C8003E8E40 /* Battle.cpp in Sources */,
 				B9B5695F1553F3C8003E8E40 /* BattleCalculator.cpp in Sources */,
-				B9B569601553F3C8003E8E40 /* CavalryTest.cpp in Sources */,
+				B9B569601553F3C8003E8E40 /* LineSizeTest.cpp in Sources */,
 				B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */,
 				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
 				B9B569631553F3C8003E8E40 /* Units.cpp in Sources */,
