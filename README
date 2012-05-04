@@ -2,3 +2,9 @@ to install the gem execute the following two commands:
 
 	gem build awe_native_extensions.gemspec
 	sudo gem install awe_native_extensions-0.0.1.gem
+	
+To test if the gem was installed successfully use:
+
+	ruby -rubygems addtitional/ruby/test.rb 
+	
+hf
