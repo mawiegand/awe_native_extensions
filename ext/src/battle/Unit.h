@@ -5,6 +5,7 @@
 #include <string>
 
 class Battle;
+class Army;
 
 class Unit {
 public:
@@ -14,7 +15,8 @@ public:
 	
 	bool valid() const;
 	
-	void applyDamage(Battle& battle);
+	double numDeadUnits(double numHits, double superiorityBonus, Unit* target) const;
+	void applyDamage(double superiorityBonus, Army* targets);
 	
 #pragma mark unit state information
 	size_t numUnitsAtStart;

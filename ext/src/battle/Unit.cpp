@@ -2,6 +2,7 @@
 
 #include <util/ErrorHandling.h>
 #include <Battle.h>
+#include <Army.h>
 
 bool Unit::initiativeGreater(const Unit* a, const Unit* b) {
 	awePtrCheck(a);
@@ -22,19 +23,22 @@ Unit::Unit() :
 }
 
 bool Unit::valid() const {
-	return unitTypeId >= 0 && unitCategoryId >= 0;
+	return unitTypeId >= 0 && unitCategoryId >= 0 && numUnitsAtStart >= numDeaths;
 }
 
-void Unit::applyDamage(Battle& battle) {
-	/*double enemyFactionStartSize = (double) battle.enemyFactionStartSize(myFaction);
+double Unit::numDeadUnits(double numHitting, double superiorityBonus, Unit* target) const {
+	return (criticalDamage*criticalProbability)/target->hitpoints + baseDamage/(target->hitpoints + target->armor) * numHitting * superiorityBonus;
+}
+
+void Unit::applyDamage(double superiorityBonus, Army* targets) {
+	double numTargetsAlive = ((double) targets->numUnitsAlive());
+	double pFactor = (((double) numUnitsAtStart) - ((double) numHits))/numTargetsAlive; 
+	std::vector<Unit*>::iterator targetIt;
+	for (targetIt = targets->units.begin(); targetIt != targets->units.end(); targetIt++) {
+		double numHittingUnits = (((double) (*targetIt)->numUnitsAtStart) - ((double) (*targetIt)->numDeaths)) *pFactor;
+		
+		//double deaths = 
+		
+	}
 	
-	double superiorityProportion =  (((double) myFaction->startSize()) - enemyFactionStartSize)/enemyFactionStartSize;
-	
-	double superiorityBonus = 1 + superiorityProportion*superiorityFactor;
-	
-	if (superiorityBonus > superiorityBonusMax) {
-		superiorityBonus = superiorityBonusMax;
-	} else if (superiorityBonus < superiorityBonusMin) {
-		superiorityBonus = superiorityBonusMin;
-	}*/
 }

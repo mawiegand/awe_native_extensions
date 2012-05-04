@@ -23,7 +23,9 @@ public:
 	///All the damageValues during a Battle will be multiplied by this factor.
 	///This helps to control the number of ticks needed until a Battle is over (bigger = faster, smaller = slower).
 	double damageFactor;
-	
+	double superiorityFactor;
+	double superiorityBonusMin;
+	double superiorityBonusMax;
 };
 
 #endif
