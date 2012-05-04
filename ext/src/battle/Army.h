@@ -25,6 +25,7 @@ public:
 	void getAllAliveUnitsOfCategory(int category, std::vector<Unit*> result);
 	Army* getAllAliveUnitsOfCategory(int category);
 	
+  int numKills() const;
 	void shuffle();
 	void sortByInitiative();
 	

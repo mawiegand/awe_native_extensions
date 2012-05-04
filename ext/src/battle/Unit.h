@@ -32,6 +32,9 @@ public:
 	///name the name of the type
 	std::string name;
 	
+  double damageTaken;      ///< sum of hitpoints lost in this unit (type)
+  double damageInflicted;  ///< sum of hitpoints destoyed at opposing units
+	
 	///damage the amount of damage that this unit type deals per unit
 	double baseDamage;
 	///criticalDamage the amount of extra damage that is beeing dealt by a unit if a critical hit happens
