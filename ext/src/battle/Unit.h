@@ -8,6 +8,8 @@ class Battle;
 
 class Unit {
 public:
+	static bool initiativeGreater(const Unit* a, const Unit* b);
+public:
 	Unit();
 	
 	bool valid() const;

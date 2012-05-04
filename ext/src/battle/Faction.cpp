@@ -45,3 +45,16 @@ bool Faction::hasOfUnitsCategory(int category) const {
 	}
 	return false;
 }
+
+Army* Faction::combinedArmy() {
+	Army* re = new Army(-1);
+	std::vector<Army*>::const_iterator armyIt;
+	for (armyIt = armies.begin(); armyIt != armies.end(); armyIt++) {
+		awePtrCheck(*armyIt);
+		std::vector<Unit*>::const_iterator unitIt;
+		for (unitIt = (*armyIt)->units.begin(); unitIt != (*armyIt)->units.end(); unitIt++) {
+			re->addUnit(*unitIt);
+		}
+	}
+	return re;
+}
