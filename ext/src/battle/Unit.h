@@ -61,6 +61,8 @@ OStream& operator<<(OStream& out, const Unit& unit) {
 	out<<"\t"<<"numHits="<<unit.numHits<<"\n";
 	out<<"\t"<<"numKills="<<unit.numKills<<"\n";
 	out<<"\t"<<"newXp="<<unit.newXp<<"\n";
+	out<<"\t"<<"unitTypeId="<<unit.unitTypeId<<"\n";
+	out<<"\t"<<"unitCategoryId="<<unit.unitCategoryId<<"\n";
 	out<<"\t"<<"name="<<unit.name<<"\n";
 	out<<"\t"<<"damageTaken="<<unit.damageTaken<<"\n";
 	out<<"\t"<<"damageInflicted="<<unit.damageInflicted<<"\n";
