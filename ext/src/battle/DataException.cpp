@@ -1,5 +1,6 @@
 #include <DataException.h>
 
+#include <util/ErrorHandling.h>
 #include <sstream>
 
 DataException::DataException(const char* file, int line, const char* func, const char* message) :
@@ -9,7 +10,7 @@ DataException::DataException(const char* file, int line, const char* func, const
 }
 
 DataException::~DataException() throw() {
-
+	logMessage("DECONSTRUCTION DataException");
 }
 
 const char* DataException::what() const throw() {

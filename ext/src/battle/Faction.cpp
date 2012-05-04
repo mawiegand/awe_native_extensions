@@ -3,7 +3,9 @@
 #include <util/ErrorHandling.h>
 
 Faction::Faction() {}
-Faction::~Faction() {}
+Faction::~Faction() {
+	logMessage("DECONSTRUCTION Faction");
+}
 
 void Faction::addArmy(Army* army) {
 	armies.push_back(army);

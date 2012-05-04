@@ -14,6 +14,7 @@ public:
 	///Creates a BattleCalculator.
 	///@param damageFactor all the damageValues during a Battle will be multiplied by this factor
 	BattleCalculator(double damageFactor = 1.0);
+	virtual ~BattleCalculator();
 	
 	///Callculate one tick of a Battle
 	///@param Battle the Battle

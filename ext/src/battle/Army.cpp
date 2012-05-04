@@ -9,7 +9,7 @@ Army::Army(int playerId) : playerId(playerId) {
 }
 
 Army::~Army() {
-
+	logMessage("DECONSTRUCTION Army");
 }
 
 void Army::addUnit(Unit* unit) {

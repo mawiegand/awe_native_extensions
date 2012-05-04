@@ -6,6 +6,7 @@
 class NoTest : public PriorityTest {
 public:
 	NoTest();
+	virtual ~NoTest();
 	void pushCategoryToPriority(int category);
 	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const;
 private:

@@ -6,6 +6,7 @@
 class LineSizeTest : public PriorityTest {
 public:
 	LineSizeTest(int testCategoryId);
+	virtual ~LineSizeTest();
 	void pushCategoryToPriorityOnFail(int category);
 	void pushCategoryToPriorityOnSuccess(int category);
 	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const;

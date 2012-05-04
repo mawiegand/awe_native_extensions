@@ -14,6 +14,10 @@ BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFac
 	
 }
 
+BattleCalculator::~BattleCalculator() {
+	logMessage("DECONSTRUCTION LineSizeTest");
+}
+
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
 
 	logMessage(battle);

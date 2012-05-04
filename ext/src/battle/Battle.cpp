@@ -6,7 +6,7 @@ Battle::Battle() {
 
 }
 Battle::~Battle() {
-
+	logMessage("DECONSTRUCTION Battle");
 }
 
 void Battle::addFaction(Faction* faction) {
@@ -23,6 +23,8 @@ size_t Battle::numFactions() const {
 }
 
 void Battle::addUnitCategory(UnitCategory* category) {
+	logMessage("addUnitCategory");
+	logMessage(*category);
 	categories.push_back(category);
 }
 UnitCategory* Battle::getUnitCategory(size_t i) {

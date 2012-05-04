@@ -3,6 +3,7 @@
 #include <Battle.h>
 #include <math.h>
 #include <util/Random.h>
+#include <util/ErrorHandling.h>
 
 LineSizeTest::LineSizeTest(int testCategoryId) :  
 	testCategoryId(testCategoryId),
@@ -15,6 +16,9 @@ LineSizeTest::LineSizeTest(int testCategoryId) :
 	maxProbability(0.8) ///TODO missing in Wiki
 {
 
+}
+LineSizeTest::~LineSizeTest() {
+	logMessage("DECONSTRUCTION LineSizeTest");
 }
 void LineSizeTest::pushCategoryToPriorityOnFail(int category) {
 	prioritiesOnFail.push_back(category);

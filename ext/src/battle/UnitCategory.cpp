@@ -10,5 +10,5 @@ UnitCategory::UnitCategory(int categoryId) : categoryId(categoryId), test(0) {
 }
 
 UnitCategory::~UnitCategory() {
-
+	logMessage("DECONSTRUCTION UnitCategory");
 }

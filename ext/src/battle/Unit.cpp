@@ -23,6 +23,10 @@ Unit::Unit() :
 
 }
 
+Unit::~Unit() {
+	logMessage("DECONSTRUCTION Unit");
+}
+
 bool Unit::valid() const {
 	return unitTypeId >= 0 && unitCategoryId >= 0 && numUnitsAtStart >= numDeaths;
 }
