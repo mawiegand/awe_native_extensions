@@ -6,7 +6,7 @@
 
 class UnitCategory {
 public:
-	UnitCategory(int categoryId, const std::string& name);
+	UnitCategory(int categoryId);
 	virtual ~UnitCategory();
 
 	int categoryId;
