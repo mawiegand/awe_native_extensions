@@ -55,10 +55,10 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 		
 		double deaths = numDeadUnits(numHittingUnits, superiorityBonus, *targetIt);
 		//overkill
-		logMessage("numHittingUnits:");
-		logMessage(numHittingUnits);
-		logMessage("DEATHS:");
-		logMessage(deaths);
+		/*logMessage("numHittingUnits:");
+		logMessage(numHittingUnits);*/
+		/*logMessage("DEATHS:");
+		logMessage(deaths);*/
 		if (deaths + ((double)(*targetIt)->numDeaths) > (*targetIt)->numUnitsAtStart) {
 			damageInflicted += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths)*(*targetIt)->hitpoints;
 			numKills += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths);

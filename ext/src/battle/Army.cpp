@@ -109,8 +109,8 @@ void Army::getAllLivingUnitsOfCategory(int category, std::vector<Unit*>& result)
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		if ((*it)->unitCategoryId == category && (*it)->numUnitsAtStart > (*it)->numDeaths) {
-			logMessage("alive added");
-			logMessage(**it);
+			//logMessage("alive added");
+			//logMessage(**it);
 			result.push_back(*it);
 		}
 	}
@@ -118,11 +118,11 @@ void Army::getAllLivingUnitsOfCategory(int category, std::vector<Unit*>& result)
 
 Army* Army::getAllLivingUnitsOfCategory(int category) {
 	Army* re = new Army(-1);
-	logMessage("created dummy army");
+	//logMessage("created dummy army");
 	getAllLivingUnitsOfCategory(category, re->units);
-	logMessage("filled dummy army");
-	logMessage(*re);
-	logMessage("dummy army done");
+	//logMessage("filled dummy army");
+	//logMessage(*re);
+	//logMessage("dummy army done");
 	return re;
 }
 
