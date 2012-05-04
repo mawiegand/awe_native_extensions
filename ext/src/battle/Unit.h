@@ -35,6 +35,8 @@ public:
 	///criticalProbability the probability for a unit of this type to execute a critical strike
 	double criticalProbability;
 	
+  int initiative; ///< initiative of unit, determines sequence of attackers 
+	
 	///hitpoints the amount of healthpoints that each unit of this type has
 	double hitpoints;
 	///
