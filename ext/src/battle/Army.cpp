@@ -17,6 +17,9 @@ void Army::addUnit(Unit* unit) {
 }
 
 Unit* Army::getUnit(size_t i) {
+	if (i >= numUnits()) {
+		aweError("i was >= units.size()");
+	}
 	return units[i];
 }
 size_t Army::numUnits() const {
@@ -104,6 +107,16 @@ Army* Army::getAllAliveUnitsOfCategory(int category) {
 	Army* re = new Army(-1);
 	getAllAliveUnitsOfCategory(category, re->units);
 	return re;
+}
+
+int Army::numKills() const {
+	int num = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		num += (*it)->numKills;
+	}
+	return num;
 }
 
 void Army::shuffle() {

@@ -12,6 +12,9 @@ size_t Faction::numArmies() const {
 	return armies.size();
 }
 Army* Faction::getArmy(size_t i) {
+	if (i >= numArmies()) {
+		aweError("i was >= armies.size()");
+	}
 	return armies[i];
 }
 
