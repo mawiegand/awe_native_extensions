@@ -29,8 +29,6 @@ public:
 	double damageFactor;
 	
 private:
-	std::map<int, UnitCategory*> m_categories;
-	
 	static double random();
 	static bool random(double probability);
 	static double random01(double probability);

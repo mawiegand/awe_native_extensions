@@ -17,6 +17,8 @@
 		B9B569641553F3C8003E8E40 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569591553F3C8003E8E40 /* Random.cpp */; };
 		B9B5697A1553FE75003E8E40 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569771553FE6E003E8E40 /* main.cpp */; };
 		B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5697B15540112003E8E40 /* UnitCategory.cpp */; };
+		B9B5699115540B90003E8E40 /* DataException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5699015540B8F003E8E40 /* DataException.cpp */; };
+		B9B5699215541329003E8E40 /* DataException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5699015540B8F003E8E40 /* DataException.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +71,9 @@
 		B9B5698315540577003E8E40 /* awe_native_extensions.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = awe_native_extensions.rb; sourceTree = "<group>"; };
 		B9B5698515540583003E8E40 /* awe_native_extensions.gemspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = awe_native_extensions.gemspec; sourceTree = "<group>"; };
 		B9B5698615540613003E8E40 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		B9B56987155408E4003E8E40 /* ErrorHandling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorHandling.h; sourceTree = "<group>"; };
+		B9B5698F15540992003E8E40 /* DataException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataException.h; sourceTree = "<group>"; };
+		B9B5699015540B8F003E8E40 /* DataException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataException.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +162,8 @@
 				B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */,
 				B9B569581553F3C8003E8E40 /* util */,
 				B9B5697B15540112003E8E40 /* UnitCategory.cpp */,
+				B9B5698F15540992003E8E40 /* DataException.h */,
+				B9B5699015540B8F003E8E40 /* DataException.cpp */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 			children = (
 				B9B569591553F3C8003E8E40 /* Random.cpp */,
 				B9B5695A1553F3C8003E8E40 /* Random.h */,
+				B9B56987155408E4003E8E40 /* ErrorHandling.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B5699115540B90003E8E40 /* DataException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +304,7 @@
 				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
 				B9B569631553F3C8003E8E40 /* Units.cpp in Sources */,
 				B9B569641553F3C8003E8E40 /* Random.cpp in Sources */,
+				B9B5699215541329003E8E40 /* DataException.cpp in Sources */,
 				B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4,11 +4,12 @@
 #include <vector>
 
 class Battle;
+class Faction;
 
 class PriorityTest {
 public:
 	virtual ~PriorityTest() {}
-	virtual const std::vector<int>& test(const Battle& battle) const = 0;
+	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const = 0;
 };
 
 #endif

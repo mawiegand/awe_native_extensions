@@ -12,7 +12,11 @@ public:
 	
 	void addUnits(Units* units);
 	Units* getUnits(size_t i);
-	size_t numUnits() const; 
+	size_t numUnits() const;
+	
+	size_t startSize() const;
+	size_t startSizeOfCategory(int category) const;
+	bool hasOfUnitsCategory(int category) const;
 	
 	int playerId;
 	std::vector<Units*> units;

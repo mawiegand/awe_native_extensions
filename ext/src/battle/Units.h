@@ -4,11 +4,16 @@
 #include <cstddef>
 #include <string>
 
+class Battle;
+
 class Units {
 public:
 	Units();
 	
 	bool valid() const;
+	
+	void foo();
+	void applyDamage(Battle& battle);
 	
 #pragma mark unit state information
 	size_t numUnitsAtStart;

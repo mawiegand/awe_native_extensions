@@ -1,5 +1,7 @@
 #include <Battle.h>
 
+#include <util/ErrorHandling.h>
+
 Battle::Battle() {
 
 }
@@ -29,4 +31,45 @@ size_t Battle::numUnitCategories() const {
 
 void Battle::checkValidity() const {
 	
+}
+
+size_t Battle::enemyFactionsStartSize(const Faction* myFaction) const {
+	size_t re = 0;
+	{
+		std::vector<Faction*>::const_iterator it;
+		for (it = factions.begin(); it != factions.end(); it++) {
+			awePtrCheck(*it);
+			if ((*it) != myFaction) {
+				re += (*it)->startSize();
+			}
+		}
+	}
+	return re;
+}
+
+size_t Battle::enemyFactionsStartSizeOfCategory(int category, const Faction* myFaction) const {
+	size_t re = 0;
+	{
+		std::vector<Faction*>::const_iterator it;
+		for (it = factions.begin(); it != factions.end(); it++) {
+			awePtrCheck(*it);
+			if ((*it) != myFaction) {
+				re += (*it)->startSizeOfCategory(category);
+			}
+		}
+	}
+	return re;
+}
+
+bool Battle::enemyFactionsHaveUnitsOfCategory(int category, const Faction* myFaction) const {
+	std::vector<Faction*>::const_iterator it;
+	for (it = factions.begin(); it != factions.end(); it++) {
+		awePtrCheck(*it);
+		if ((*it) != myFaction) {
+			if ((*it)->hasOfUnitsCategory(category)) {
+			
+			}
+		}
+	}
+	return true;
 }

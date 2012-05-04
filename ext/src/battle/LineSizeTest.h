@@ -3,15 +3,17 @@
 
 #include <PriorityTest.h>
 
-class LineSizeTest {
+class LineSizeTest : public PriorityTest {
 public:
-	LineSizeTest();
+	LineSizeTest(int testCategoryId);
 	void pushCategoryToPriorityOnFail(int category);
 	void pushCategoryToPriorityOnSuccess(int category);
-	virtual const std::vector<int>& test(const Battle& battle) const;
+	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const;
 private:
 	std::vector<int> prioritiesOnFail;
 	std::vector<int> prioritiesOnSuccess;
+	
+	int testCategoryId;
 };
 
 

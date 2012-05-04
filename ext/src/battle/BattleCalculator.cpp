@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFactor), m_categories() {
+BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFactor){
 	
 }
 
