@@ -3,15 +3,15 @@
 
 #include <cstddef>
 #include <vector>
-#include "Units.h"
+#include "Unit.h"
 
 class Army {
 public:
 	Army(int playerId);
 	virtual ~Army();
 	
-	void addUnits(Units* units);
-	Units* getUnits(size_t i);
+	void addUnit(Unit* unit);
+	Unit* getUnit(size_t i);
 	size_t numUnits() const;
 	
 	size_t startSize() const;
@@ -19,7 +19,7 @@ public:
 	bool hasOfUnitsCategory(int category) const;
 	
 	int playerId;
-	std::vector<Units*> units;
+	std::vector<Unit*> units;
 };
 
 #endif

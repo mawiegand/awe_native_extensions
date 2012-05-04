@@ -13,12 +13,12 @@
 		B9B5695F1553F3C8003E8E40 /* BattleCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */; };
 		B9B569601553F3C8003E8E40 /* LineSizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */; };
 		B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569511553F3C8003E8E40 /* Faction.cpp */; };
-		B9B569631553F3C8003E8E40 /* Units.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569561553F3C8003E8E40 /* Units.cpp */; };
 		B9B569641553F3C8003E8E40 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569591553F3C8003E8E40 /* Random.cpp */; };
 		B9B5697A1553FE75003E8E40 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569771553FE6E003E8E40 /* main.cpp */; };
 		B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5697B15540112003E8E40 /* UnitCategory.cpp */; };
 		B9B5699115540B90003E8E40 /* DataException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5699015540B8F003E8E40 /* DataException.cpp */; };
 		B9B5699215541329003E8E40 /* DataException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5699015540B8F003E8E40 /* DataException.cpp */; };
+		B9B56995155424DE003E8E40 /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B56993155424DD003E8E40 /* Unit.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,8 +61,6 @@
 		B9B569521553F3C8003E8E40 /* Faction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faction.h; sourceTree = "<group>"; };
 		B9B569541553F3C8003E8E40 /* PriorityTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityTest.h; sourceTree = "<group>"; };
 		B9B569551553F3C8003E8E40 /* UnitCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCategory.h; sourceTree = "<group>"; };
-		B9B569561553F3C8003E8E40 /* Units.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Units.cpp; sourceTree = "<group>"; };
-		B9B569571553F3C8003E8E40 /* Units.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Units.h; sourceTree = "<group>"; };
 		B9B569591553F3C8003E8E40 /* Random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
 		B9B5695A1553F3C8003E8E40 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
 		B9B569771553FE6E003E8E40 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -74,6 +72,8 @@
 		B9B56987155408E4003E8E40 /* ErrorHandling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorHandling.h; sourceTree = "<group>"; };
 		B9B5698F15540992003E8E40 /* DataException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataException.h; sourceTree = "<group>"; };
 		B9B5699015540B8F003E8E40 /* DataException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataException.cpp; sourceTree = "<group>"; };
+		B9B56993155424DD003E8E40 /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unit.cpp; sourceTree = "<group>"; };
+		B9B56994155424DD003E8E40 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +150,8 @@
 				B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */,
 				B9B569501553F3C8003E8E40 /* LineSizeTest.h */,
 				B9B569551553F3C8003E8E40 /* UnitCategory.h */,
-				B9B569561553F3C8003E8E40 /* Units.cpp */,
-				B9B569571553F3C8003E8E40 /* Units.h */,
+				B9B56993155424DD003E8E40 /* Unit.cpp */,
+				B9B56994155424DD003E8E40 /* Unit.h */,
 				B9B569491553F3C8003E8E40 /* Army.cpp */,
 				B9B5694A1553F3C8003E8E40 /* Army.h */,
 				B9B569511553F3C8003E8E40 /* Faction.cpp */,
@@ -302,10 +302,10 @@
 				B9B569601553F3C8003E8E40 /* LineSizeTest.cpp in Sources */,
 				B9B569611553F3C8003E8E40 /* Faction.cpp in Sources */,
 				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
-				B9B569631553F3C8003E8E40 /* Units.cpp in Sources */,
 				B9B569641553F3C8003E8E40 /* Random.cpp in Sources */,
 				B9B5699215541329003E8E40 /* DataException.cpp in Sources */,
 				B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */,
+				B9B56995155424DE003E8E40 /* Unit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

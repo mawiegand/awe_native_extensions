@@ -1,9 +1,9 @@
-#include <Units.h>
+#include <Unit.h>
 
 #include <util/ErrorHandling.h>
 #include <Battle.h>
 
-Units::Units() : 
+Unit::Unit() : 
 	numUnitsAtStart(0),
 	numDeaths(0),
 	numHits(0),
@@ -15,15 +15,15 @@ Units::Units() :
 
 }
 
-bool Units::valid() const {
+bool Unit::valid() const {
 	return unitTypeId >= 0 && unitCategoryId >= 0;
 }
 
-void Units::foo() {
+void Unit::foo() {
 	awePtrCheck(0);
 }
 
-void Units::applyDamage(Battle& battle) {
+void Unit::applyDamage(Battle& battle) {
 	/*double enemyFactionStartSize = (double) battle.enemyFactionStartSize(myFaction);
 	
 	double superiorityProportion =  (((double) myFaction->startSize()) - enemyFactionStartSize)/enemyFactionStartSize;

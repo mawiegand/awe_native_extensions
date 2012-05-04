@@ -1,14 +1,14 @@
-#ifndef WackBattle_Units_h
-#define WackBattle_Units_h
+#ifndef WackBattle_Unit_h
+#define WackBattle_Unit_h
 
 #include <cstddef>
 #include <string>
 
 class Battle;
 
-class Units {
+class Unit {
 public:
-	Units();
+	Unit();
 	
 	bool valid() const;
 	

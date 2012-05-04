@@ -10,11 +10,11 @@ Army::~Army() {
 
 }
 
-void Army::addUnits(Units* units) {
-	this->units.push_back(units);
+void Army::addUnit(Unit* unit) {
+	this->units.push_back(unit);
 }
 
-Units* Army::getUnits(size_t i) {
+Unit* Army::getUnit(size_t i) {
 	return units[i];
 }
 size_t Army::numUnits() const {
@@ -23,7 +23,7 @@ size_t Army::numUnits() const {
 
 size_t Army::startSize() const {
 	size_t re = 0;
-	std::vector<Units*>::const_iterator it;
+	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		re += (*it)->numUnitsAtStart;
@@ -33,7 +33,7 @@ size_t Army::startSize() const {
 
 size_t Army::startSizeOfCategory(int category) const {
 	size_t re = 0;
-	std::vector<Units*>::const_iterator it;
+	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		if ((*it)->unitCategoryId == category) {
@@ -44,7 +44,7 @@ size_t Army::startSizeOfCategory(int category) const {
 }
 
 bool Army::hasOfUnitsCategory(int category) const {
-	std::vector<Units*>::const_iterator it;
+	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
 		if ((*it)->numUnitsAtStart > 0 && (*it)->unitCategoryId == category) {
