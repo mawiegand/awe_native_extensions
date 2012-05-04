@@ -16,6 +16,7 @@
 		B9B569631553F3C8003E8E40 /* Units.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569561553F3C8003E8E40 /* Units.cpp */; };
 		B9B569641553F3C8003E8E40 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569591553F3C8003E8E40 /* Random.cpp */; };
 		B9B5697A1553FE75003E8E40 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569771553FE6E003E8E40 /* main.cpp */; };
+		B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5697B15540112003E8E40 /* UnitCategory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,7 @@
 		B9B5695A1553F3C8003E8E40 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
 		B9B569771553FE6E003E8E40 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B9B569791553FE6E003E8E40 /* test.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = test.rb; sourceTree = "<group>"; };
+		B9B5697B15540112003E8E40 /* UnitCategory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitCategory.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */,
 				B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */,
 				B9B569581553F3C8003E8E40 /* util */,
+				B9B5697B15540112003E8E40 /* UnitCategory.cpp */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
 				B9B569631553F3C8003E8E40 /* Units.cpp in Sources */,
 				B9B569641553F3C8003E8E40 /* Random.cpp in Sources */,
+				B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

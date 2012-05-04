@@ -2,13 +2,15 @@
 #define WackBattle_UnitCategory_h
 
 #include <PriorityTest.h>
+#include <string>
 
 class UnitCategory {
 public:
-	UnitCategory();
-	virtual ~UnitCategory() {}
-	virtual int getID() = 0;
-	virtual void getTargetClass() = 0;
+	UnitCategory(int categoryId, const std::string& name);
+	virtual ~UnitCategory();
+
+	int categoryId;
+	std::string name;
 
 	PriorityTest* test;
 };
