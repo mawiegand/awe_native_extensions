@@ -18,7 +18,7 @@ public:
 	UnitCategory* getUnitCategory(size_t i);
 	size_t numUnitCategories() const;
 	
-	void checkValidity() const;
+	bool isValid() const;
 	
 	size_t enemyFactionsStartSize(const Faction* myFaction) const;
 	size_t enemyFactionsStartSizeOfCategory(int category, const Faction* myFaction) const;

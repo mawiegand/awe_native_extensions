@@ -24,11 +24,6 @@ public:
 	///This helps to control the number of ticks needed until a Battle is over (bigger = faster, smaller = slower).
 	double damageFactor;
 	
-private:
-	static double random();
-	static bool random(double probability);
-	static double random01(double probability);
-	static size_t random(size_t start, size_t end);
 };
 
 #endif

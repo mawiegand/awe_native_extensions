@@ -29,8 +29,8 @@ size_t Battle::numUnitCategories() const {
 	return categories.size();
 }
 
-void Battle::checkValidity() const {
-	
+bool Battle::isValid() const {
+	return true;
 }
 
 size_t Battle::enemyFactionsStartSize(const Faction* myFaction) const {
