@@ -64,6 +64,7 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 			numKills += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths);
 			(*targetIt)->numDeaths = (*targetIt)->numUnitsAtStart;
 			(*targetIt)->damageTaken = (*targetIt)->numUnitsAtStart * (*targetIt)->hitpoints;
+			(*targetIt)->newXp = ((double)(*targetIt)->numUnitsAtStart) * (*targetIt)->xpFactorPerUnit;
 			//callculate the hits that are left
 			//1 - living/Tote = Überschlag
 			double overkill = 1.0-(((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths)/deaths);
@@ -83,6 +84,7 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 			numHits += numHittingUnits;
 			(*targetIt)->numDeaths += deaths;
 			(*targetIt)->damageTaken += deaths * (*targetIt)->hitpoints;
+			(*targetIt)->newXp += deaths * (*targetIt)->xpFactorPerUnit;
 		}
 		
 	}
