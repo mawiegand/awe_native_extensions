@@ -12,6 +12,18 @@ int main (int argc, const char * argv[])
 	UnitCategory* category1 = new UnitCategory(1);
 	UnitCategory* category2 = new UnitCategory(2);
 	
+	Army* armyA1 = new Army(1);
+	factionA->addArmy(armyA1);
+	Unit* unitA11 = new Unit();
+	unitA11->unitCategoryId = 0;
+	armyA1->addUnit(unitA11);
+	
+	Army* armyB1 = new Army(1);
+	factionB->addArmy(armyB1);
+	Unit* unitB11 = new Unit();
+	unitB11->unitCategoryId = 0;
+	armyB1->addUnit(unitB11);
+	
 	Battle* battle = new Battle();
 	battle->addFaction(factionA);
 	battle->addFaction(factionB);

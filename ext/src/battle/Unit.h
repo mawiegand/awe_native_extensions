@@ -53,4 +53,26 @@ public:
 #pragma mark -
 };
 
+template<class OStream>
+OStream& operator<<(OStream& out, const Unit& unit) {
+	out<<"Unit( \n";
+	out<<"\t"<<"numUnitsAtStart="<<unit.numUnitsAtStart<<"\n";
+	out<<"\t"<<"numDeaths="<<unit.numDeaths<<"\n";
+	out<<"\t"<<"numHits="<<unit.numHits<<"\n";
+	out<<"\t"<<"numKills="<<unit.numKills<<"\n";
+	out<<"\t"<<"newXp="<<unit.newXp<<"\n";
+	out<<"\t"<<"name="<<unit.name<<"\n";
+	out<<"\t"<<"damageTaken="<<unit.damageTaken<<"\n";
+	out<<"\t"<<"damageInflicted="<<unit.damageInflicted<<"\n";
+	out<<"\t"<<"baseDamage="<<unit.baseDamage<<"\n";
+	out<<"\t"<<"criticalDamage="<<unit.criticalDamage<<"\n";
+	out<<"\t"<<"criticalProbability="<<unit.criticalProbability<<"\n";
+	out<<"\t"<<"initiative="<<unit.initiative<<"\n";
+	out<<"\t"<<"hitpoints="<<unit.hitpoints<<"\n";
+	out<<"\t"<<"armor="<<unit.armor<<"\n";
+	out<<"\t"<<"xpFactorPerUnit="<<unit.xpFactorPerUnit<<"\n";
+	out<<")\n";
+    return out;
+}
+
 #endif

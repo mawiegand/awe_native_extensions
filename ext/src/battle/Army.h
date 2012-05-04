@@ -34,4 +34,17 @@ public:
 	std::vector<Unit*> units;
 };
 
+template<class OStream>
+OStream& operator<<(OStream& out, const Army& army) {
+	out<<"Army( \n";
+	out<<"\t"<<"playerId="<<army.playerId<<"\n";
+	out<<"\t"<<"units="<<"\n";
+	std::vector<Unit*>::const_iterator it;
+	for (it = army.units.begin(); it != army.units.end(); it++) {
+		out<<(*(*it))<<"\n";
+	}
+	out<<")\n";
+    return out;
+}
+
 #endif

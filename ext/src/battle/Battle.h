@@ -31,4 +31,16 @@ public:
 	std::vector<UnitCategory*> categories;
 };
 
+template<class OStream>
+OStream& operator<<(OStream& out, const Battle& battle) {
+	out<<"Battle( \n";
+	out<<"\t"<<"factions="<<"\n";
+	std::vector<Faction*>::const_iterator it;
+	for (it = battle.factions.begin(); it != battle.factions.end(); it++) {
+		out<<(*(*it))<<"\n";
+	}
+	out<<")\n";
+    return out;
+}
+
 #endif

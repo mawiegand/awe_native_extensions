@@ -21,4 +21,16 @@ public:
 	std::vector<Army*> armies;
 };
 
+template<class OStream>
+OStream& operator<<(OStream& out, const Faction& faction) {
+	out<<"Faction( \n";
+	out<<"\t"<<"armies="<<"\n";
+	std::vector<Army*>::const_iterator it;
+	for (it = faction.armies.begin(); it != faction.armies.end(); it++) {
+		out<<(*(*it))<<"\n";
+	}
+	out<<")\n";
+    return out;
+}
+
 #endif

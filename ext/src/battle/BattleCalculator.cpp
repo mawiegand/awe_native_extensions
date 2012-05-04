@@ -15,6 +15,9 @@ BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFac
 }
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
+
+	logMessage(battle);
+
 	if (battle.factions.size() != 2) {
 		aweError("the number of in the battle factions is != 2");
 	}
