@@ -13,12 +13,7 @@ BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFac
 }
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
-	return callculateOneTick(battle.factions);
-}
-
-bool BattleCalculator::callculateOneTick(std::vector<Faction*>& factions) const {
-	
-	return false;
+	return true;
 }
 
 double BattleCalculator::random() {
