@@ -13,6 +13,9 @@ void Battle::addFaction(Faction* faction) {
 	factions.push_back(faction);
 }
 Faction* Battle::getFaction(size_t i) {
+	if (i >= factions.size()) {
+		aweError("i was >= factions.size()");
+	}
 	return factions[i];
 }
 size_t Battle::numFactions() const {
@@ -23,6 +26,9 @@ void Battle::addUnitCategory(UnitCategory* category) {
 	categories.push_back(category);
 }
 UnitCategory* Battle::getUnitCategory(size_t i) {
+	if (i >= categories.size()) {
+		aweError("i was >= categories.size()");
+	}
 	return categories[i];
 }
 UnitCategory* Battle::getUnitCategoryById(int id) {

@@ -3,6 +3,7 @@
 #include <util/ErrorHandling.h>
 #include <Battle.h>
 #include <Army.h>
+#include <math.h>
 
 bool Unit::initiativeGreater(const Unit* a, const Unit* b) {
 	awePtrCheck(a);
@@ -37,7 +38,12 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 	for (targetIt = targets->units.begin(); targetIt != targets->units.end(); targetIt++) {
 		double numHittingUnits = (((double) (*targetIt)->numUnitsAtStart) - ((double) (*targetIt)->numDeaths)) *pFactor;
 		
-		//double deaths = 
+		double deaths = numDeadUnits(numHittingUnits, superiorityBonus, *targetIt);
+		if (deaths + ((double)(*targetIt)->numDeaths) > (*targetIt)->numUnitsAtStart) {
+		
+		} else if (floor(deaths) != deaths) {
+			
+		}
 		
 	}
 	

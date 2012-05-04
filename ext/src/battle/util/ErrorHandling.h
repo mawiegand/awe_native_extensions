@@ -2,6 +2,7 @@
 #define awe_native_extensions_ErrorHandling_h
 
 #include <DataException.h>
+#include <iostream>
 
 #ifndef SWIG
 # define awePtrCheck(ptr) if((ptr) == 0)throw new DataException(__FILE__, __LINE__, __FUNCTION__ ,"null pointer")
@@ -14,5 +15,7 @@
 #else
 # define aweError(err) SWIG_exception(SWIG_RuntimeError, err)
 #endif
+
+#define logMessage(message) std::cout<<message<<std::endl
 
 #endif
