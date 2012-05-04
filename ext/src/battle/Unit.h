@@ -38,6 +38,8 @@ public:
 	///attackerBonusDamage the additional amount of damage that a unit of this type deals if it is in an attacking force
 	double attackerBonusDamage;
 	
+  int initiative; ///< initiative of unit, determines sequence of attackers 
+	
 	///hitpoints the amount of healthpoints that each unit of this type has
 	double hitpoints;
 	///
