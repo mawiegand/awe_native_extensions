@@ -25,6 +25,16 @@ void Battle::addUnitCategory(UnitCategory* category) {
 UnitCategory* Battle::getUnitCategory(size_t i) {
 	return categories[i];
 }
+UnitCategory* Battle::getUnitCategoryById(int id) {
+	std::vector<UnitCategory*>::iterator it;
+	for (it = categories.begin(); it != categories.end(); it++) {
+		awePtrCheck(*it);
+		if ((*it)->categoryId == id) {
+			return (*it);
+		}
+	}
+	return 0;
+}
 size_t Battle::numUnitCategories() const {
 	return categories.size();
 }
@@ -72,4 +82,24 @@ bool Battle::enemyFactionsHaveUnitsOfCategory(int category, const Faction* myFac
 		}
 	}
 	return true;
+}
+
+Army* Battle::combinedEnemyArmy(Faction* myFaction) {
+	Army* re = new Army(-1);
+	std::vector<Faction*>::const_iterator factionIt;
+	for (factionIt = factions.begin(); factionIt != factions.end(); factionIt++) {
+		awePtrCheck(*factionIt);
+		if ((*factionIt) != myFaction) {
+			std::vector<Army*>::const_iterator armyIt;
+			for (armyIt = (*factionIt)->armies.begin(); armyIt != (*factionIt)->armies.end(); armyIt++) {
+				awePtrCheck(*armyIt);
+				std::vector<Unit*>::const_iterator unitIt;
+				for (unitIt = (*armyIt)->units.begin(); unitIt != (*armyIt)->units.end(); unitIt++) {
+					awePtrCheck(*unitIt);
+					re->addUnit(*unitIt);
+				}
+			}
+		}
+	}
+	return re;
 }

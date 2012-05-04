@@ -3,7 +3,7 @@
 
 #include <cstddef>
 #include <vector>
-#include "Unit.h"
+#include <Unit.h>
 
 class Army {
 public:
@@ -17,6 +17,9 @@ public:
 	size_t startSize() const;
 	size_t startSizeOfCategory(int category) const;
 	bool hasOfUnitsCategory(int category) const;
+	
+	void shuffle();
+	void sortByInitiative();
 	
 	int playerId;
 	std::vector<Unit*> units;

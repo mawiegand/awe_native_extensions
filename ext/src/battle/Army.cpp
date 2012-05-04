@@ -1,6 +1,8 @@
 #include <Army.h>
 
 #include <util/ErrorHandling.h>
+#include <util/Random.h>
+#include <algorithm>
 
 Army::Army(int playerId) : playerId(playerId) {
 
@@ -52,4 +54,12 @@ bool Army::hasOfUnitsCategory(int category) const {
 		}
 	}
 	return false;
+}
+
+void Army::shuffle() {
+	util::Random::shuffle<Unit*>(units);
+}
+
+void Army::sortByInitiative() {
+	std::sort(units.begin(), units.end(), Unit::initiativeGreater);
 }

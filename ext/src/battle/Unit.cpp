@@ -3,6 +3,12 @@
 #include <util/ErrorHandling.h>
 #include <Battle.h>
 
+bool Unit::initiativeGreater(const Unit* a, const Unit* b) {
+	awePtrCheck(a);
+	awePtrCheck(b);
+	return (a->initiative > b->initiative);
+}
+
 Unit::Unit() : 
 	numUnitsAtStart(0),
 	numDeaths(0),

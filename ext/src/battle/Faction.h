@@ -16,6 +16,8 @@ public:
 	size_t startSizeOfCategory(int category) const;
 	bool hasOfUnitsCategory(int category) const;
 	
+	Army* combinedArmy();
+	
 	std::vector<Army*> armies;
 };
 
