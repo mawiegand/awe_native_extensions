@@ -7,8 +7,8 @@
  %{
  /* Includes the header in the wrapper code */
  #include "../src/battle/PriorityTest.h"
- #include "../src/battle/AlwaysSameTest.h"
- #include "../src/battle/CavalryTest.h"
+ #include "../src/battle/NoTest.h"
+ #include "../src/battle/LineSizeTest.h"
  #include "../src/battle/UnitCategory.h"
  #include "../src/battle/Units.h"
  #include "../src/battle/Army.h"
@@ -20,8 +20,8 @@
  
  /* Parse the header file to generate wrappers */
  %include "../src/battle/PriorityTest.h"
- %include "../src/battle/AlwaysSameTest.h"
- %include "../src/battle/CavalryTest.h"
+ %include "../src/battle/NoTest.h"
+ %include "../src/battle/LineSizeTest.h"
  %include "../src/battle/UnitCategory.h"
  %include "../src/battle/Units.h"
  %include "../src/battle/Army.h"
