@@ -13,7 +13,7 @@ bool Faction::isValid() const {
 		if ((*it) == 0) return false;
 		if (!(*it)->isValid()) return false;
 	}
-	return false;
+	return true;
 }
 
 void Faction::addArmy(Army* army) {
