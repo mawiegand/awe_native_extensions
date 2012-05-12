@@ -34,6 +34,28 @@ Unit::Unit() :
 
 }
 
+Unit::Unit(const Unit& other) :
+	numUnitsAtStart(other.numUnitsAtStart),
+	numDeaths(other.numDeaths),
+	numHits(other.numHits),
+	numKills(other.numKills),
+	newXp(other.newXp),
+	unitTypeId(other.unitTypeId),
+	unitCategoryId(other.unitCategoryId),
+	name(other.name),
+	damageTaken(other.damageTaken),
+	damageInflicted(other.damageInflicted),
+	baseDamage(other.baseDamage),
+	criticalDamage(other.criticalDamage),
+	criticalProbability(other.criticalProbability),
+	initiative(other.initiative),
+	hitpoints(other.hitpoints),
+	armor(other.armor),
+	xpFactorPerUnit(other.xpFactorPerUnit)
+{
+
+}
+
 Unit::~Unit() {
 	logMessage("DECONSTRUCTION Unit");
 }

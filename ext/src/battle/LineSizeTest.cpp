@@ -15,7 +15,7 @@ LineSizeTest::LineSizeTest(int testCategoryId) :
 	maxPropotion(2.0),
 	maxProbability(0.8) ///TODO missing in Wiki
 {
-
+	logMessage("CONSTRUCTOR LineSizeTest");
 }
 LineSizeTest::~LineSizeTest() {
 	logMessage("DECONSTRUCTION LineSizeTest");
@@ -28,6 +28,8 @@ void LineSizeTest::pushCategoryToPriorityOnSuccess(int category) {
 }
 const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battle& battle) const {
 
+	logMessage("LINE SIZE TEST TEST");
+
 	size_t enemiesOfCategory = battle.enemyFactionsStartSizeOfCategory(testCategoryId, myFaction);
 	if (enemiesOfCategory <= 0) {
 		return prioritiesOnSuccess;
@@ -38,6 +40,7 @@ const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battl
 	}
 	
 	double propotion = ((double) enemiesOfCategory) / ((double) myOfCategory);
+	logMessage("proportion="<<propotion);
 	
 	double p = maxProbability;
 	if (propotion < minProportion) {

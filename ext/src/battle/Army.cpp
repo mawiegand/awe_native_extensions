@@ -4,11 +4,14 @@
 #include <util/Random.h>
 #include <algorithm>
 
-Army::Army(int playerId) : playerId(playerId) {
+int Army::numReferences = 0;
 
+Army::Army(int playerId) : playerId(playerId) {
+	numReferences++;
 }
 
 Army::~Army() {
+	numReferences--;
 	logMessage("DECONSTRUCTION Army");
 }
 

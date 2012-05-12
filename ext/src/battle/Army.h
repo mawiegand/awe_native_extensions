@@ -7,6 +7,8 @@
 
 class Army {
 public:
+	static int numReferences;
+public:
 	Army(int playerId);
 	virtual ~Army();
 	

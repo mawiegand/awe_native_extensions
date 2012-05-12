@@ -12,6 +12,7 @@ public:
 	static bool initiativeGreater(const Unit* a, const Unit* b);
 public:
 	Unit();
+	Unit(const Unit& other);
 	virtual ~Unit();
 	
 	bool valid() const;
