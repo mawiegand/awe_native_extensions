@@ -9,6 +9,8 @@ public:
 	UnitCategory(int categoryId);
 	virtual ~UnitCategory();
 
+	bool isValid() const;
+
 	int categoryId;
 	std::string name;
 

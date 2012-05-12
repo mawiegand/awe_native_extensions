@@ -12,3 +12,7 @@ UnitCategory::UnitCategory(int categoryId) : categoryId(categoryId), test(0) {
 UnitCategory::~UnitCategory() {
 	logMessage("DECONSTRUCTION UnitCategory");
 }
+
+bool UnitCategory::isValid() const {
+	return categoryId >= 0 && test != 0;
+}

@@ -15,6 +15,15 @@ Army::~Army() {
 	logMessage("DECONSTRUCTION Army");
 }
 
+bool Army::isValid() const {
+	std::vector<Unit*>::const_iterator it;
+	for (it = units.begin(); it != units.end(); it++) {
+		if ((*it) == 0) return false;
+		if (!(*it)->isValid()) return false;
+	}
+	return true;
+}
+
 void Army::addUnit(Unit* unit) {
 	this->units.push_back(unit);
 }
@@ -87,7 +96,7 @@ Unit* Army::getFirstAliveUnitOfCategory(int category) {
 	std::vector<Unit*>::const_iterator it;
 	for(it = units.begin(); it != units.end(); it++) {
 		awePtrCheck(*it);
-		if (!(*it)->valid()) {
+		if (!(*it)->isValid()) {
 			aweError("Unit was not valid");
 		}
 		if ((*it)->numUnitsAtStart > 0 && (*it)->unitCategoryId == category && (*it)->numUnitsAtStart > (*it)->numDeaths) {

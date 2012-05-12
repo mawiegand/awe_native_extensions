@@ -15,7 +15,7 @@ public:
 	Unit(const Unit& other);
 	virtual ~Unit();
 	
-	bool valid() const;
+	bool isValid() const;
 	
 	double numDeadUnits(double numHits, double superiorityBonus, Unit* target) const;
 	void applyDamage(double superiorityBonus, Army* targets);

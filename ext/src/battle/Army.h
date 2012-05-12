@@ -12,6 +12,8 @@ public:
 	Army(int playerId);
 	virtual ~Army();
 	
+	bool isValid() const;
+	
 	void addUnit(Unit* unit);
 	Unit* getUnit(size_t i);
 	size_t numUnits() const;

@@ -1,6 +1,7 @@
 #include <Battle.h>
 
 #include <util/ErrorHandling.h>
+#include <set>
 
 Battle::Battle() {
 
@@ -49,6 +50,55 @@ size_t Battle::numUnitCategories() const {
 }
 
 bool Battle::isValid() const {
+	//categories
+	{
+		std::vector<UnitCategory*>::const_iterator it;
+		for (it = categories.begin(); it != categories.end(); it++) {
+			if ((*it) == 0) return false;
+			if (!(*it)->isValid()) return false;
+		}
+	}
+	//factions
+	{
+		std::vector<Faction*>::const_iterator it;
+		for (it = factions.begin(); it != factions.end(); it++) {
+			if ((*it) == 0) return false;
+			if (!(*it)->isValid()) return false;
+		}
+	}
+	//check if all categories for all factions exist
+	{
+		//get categories
+		std::set<int> categoryIds;
+		std::vector<Faction*>::const_iterator fIt;
+		for (fIt = factions.begin(); fIt != factions.end(); fIt++) {
+			if ((*fIt) == 0) return false;
+			std::vector<Army*>::const_iterator aIt;
+			for (aIt = (*fIt)->armies.begin(); aIt != (*fIt)->armies.end(); aIt++) {
+				if ((*aIt) == 0) return false;
+				std::vector<Unit*>::const_iterator uIt;
+				for (uIt = (*aIt)->units.begin(); uIt != (*aIt)->units.end(); uIt++) {
+					if ((*uIt) == 0) return false;
+					categoryIds.insert((*uIt)->unitCategoryId);
+				}
+			}
+		}
+		//check if categories exist
+		std::set<int>::const_iterator cidIt;
+		for (cidIt = categoryIds.begin(); cidIt != categoryIds.end(); cidIt++) {
+			bool found = false;
+			std::vector<UnitCategory*>::const_iterator cIt;
+			for (cIt = categories.begin(); cIt != categories.end(); cIt++) {
+				if ((*cIt) == 0) return false;
+				if ((*cIt)->categoryId == (*cidIt)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) return false;
+		}
+	}
+
 	return true;
 }
 

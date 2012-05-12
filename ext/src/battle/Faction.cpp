@@ -7,6 +7,15 @@ Faction::~Faction() {
 	logMessage("DECONSTRUCTION Faction");
 }
 
+bool Faction::isValid() const {
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		if ((*it) == 0) return false;
+		if (!(*it)->isValid()) return false;
+	}
+	return false;
+}
+
 void Faction::addArmy(Army* army) {
 	armies.push_back(army);
 }

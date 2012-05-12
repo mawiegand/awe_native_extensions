@@ -8,6 +8,8 @@ public:
 	Faction();
 	virtual ~Faction();
 	
+	bool isValid() const;
+	
 	void addArmy(Army* army);
 	size_t numArmies() const;
 	Army* getArmy(size_t i);
