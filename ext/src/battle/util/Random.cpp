@@ -4,9 +4,10 @@
 #include <cmath>
 #include <limits>
 
+
 namespace util {
 double Random::random() {
-	return (double(arc4random()) / double(std::numeric_limits<u_int32_t>::max()));
+	return double(random()) / double(RAND_MAX); // no arc4random on Ubuntu (without libbsd)
 }
 bool Random::random(double probability) {
 	assert(probability >= 0.0 && probability <= 1.0);
