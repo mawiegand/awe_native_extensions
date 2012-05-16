@@ -148,7 +148,7 @@ int Army::numKills() const {
 	return num;
 }
 
-void Army::shuffle() {
+void Army::shuffle() { logMessage("IN ARMY::SHUFFLE");
 	util::Random::shuffle<Unit*>(units);
 }
 

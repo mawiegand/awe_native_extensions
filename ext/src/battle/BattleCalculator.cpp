@@ -19,22 +19,32 @@ BattleCalculator::~BattleCalculator() {
 }
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
+        logMessage("IN BATTLE CALC");
 
 	logMessage(battle);
 
 	if (battle.factions.size() != 2) {
 		aweError("the number of in the battle factions is != 2");
 	}
+
+	logMessage("START BATTLE");
 	
 	std::vector<Faction*>::iterator factionIt;
 	for (factionIt = battle.factions.begin(); factionIt != battle.factions.end(); factionIt++) {
+
+	 	logMessage("PREPARE AND SHUFFLE");
 		//callculate the combined armies
 		//logMessage("callculate the combined armies");
 		Army* ownArmy = (*factionIt)->combinedArmy();
+	 	logMessage("BEFORE SHUFFLE");
 		ownArmy->shuffle();
+	 	logMessage("AFTER SHUFFLE");
 		ownArmy->sortByInitiative();
+	 	logMessage("AFTER SORT");
 		Army* enemyArmy = battle.combinedEnemyArmy(*factionIt);
+	 	logMessage("BEFORE ENEMY SHUFFLE");
 		enemyArmy->shuffle();
+	 	logMessage("AFTER ENEMY SHUFFLE");
 		
 		//callculate the superiority bonus
 		//logMessage("callculate superiority bonus");
@@ -53,6 +63,8 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 			}
 		}
 		
+		logMessage("APPLY DAMAGE");
+
 		//apply the damage
 		//logMessage("starting apply damage loop");
 		bool damagePossible = true;
