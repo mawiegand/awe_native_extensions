@@ -58,7 +58,7 @@ const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battl
 }
 
 
-std::ostream& LineSizeTest::operator<<(std::ostream& out)  const
+std::ostream& LineSizeTest::toString(std::ostream& out)  const
 {
   out << "LineSizeTest: Success:";
   for (unsigned int i=0; i < prioritiesOnSuccess.size(); i++) {

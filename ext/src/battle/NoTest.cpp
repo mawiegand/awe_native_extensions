@@ -19,7 +19,7 @@ const std::vector<int>& NoTest::test(const Faction* myFaction, const Battle& bat
 }
 
   
-std::ostream& NoTest::operator<<(std::ostream& out)  const
+std::ostream& NoTest::toString(std::ostream& out)  const
 {
   out << "NoTest: ";
   for (unsigned int i=0; i < priorities.size(); i++) {

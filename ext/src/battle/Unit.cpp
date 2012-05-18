@@ -6,6 +6,8 @@
 #include <math.h>
 #include <util/Random.h>
 
+#define MAX(a,b)   ((a) > (b) ? (a) : (b))
+
 bool Unit::initiativeGreater(const Unit* a, const Unit* b) {
 	awePtrCheck(a);
 	awePtrCheck(b);
@@ -65,7 +67,9 @@ bool Unit::isValid() const {
 }
 
 double Unit::numDeadUnits(double numHitting, double superiorityBonus, Unit* target) const {
-	return (criticalDamage*criticalProbability)/target->hitpoints + baseDamage/(target->hitpoints + target->armor) * numHitting * superiorityBonus;
+  double modifiedDamage = superiorityBonus * baseDamage;
+  
+	return (criticalDamage*criticalProbability)/target->hitpoints + MAX(0, modifiedDamage-target->armor)/(target->hitpoints) * numHitting;
 }
 
 void Unit::applyDamage(double superiorityBonus, Army* targets) {
