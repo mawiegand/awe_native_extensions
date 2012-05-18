@@ -17,3 +17,13 @@ void NoTest::pushCategoryToPriority(int category) {
 const std::vector<int>& NoTest::test(const Faction* myFaction, const Battle& battle) const {
 	return priorities;
 }
+
+  
+std::ostream& NoTest::operator<<(std::ostream& out)  const
+{
+  out << "NoTest: ";
+  for (unsigned int i=0; i < priorities.size(); i++) {
+    out << " " << priorities[i];
+  }
+  return out ;
+}

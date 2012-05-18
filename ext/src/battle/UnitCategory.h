@@ -21,7 +21,7 @@ template<class OStream>
 OStream& operator<<(OStream& out, const UnitCategory& cat) {
 	out<<"UnitCategory( \n";
 	out<<"\t"<<"categoryId="<<cat.categoryId<<"\n";
-	out<<"\t"<<"test="<<cat.test<<"\n";
+	out<<"\t"<<"test ="<<*cat.test<<"\n";
 	out<<")\n";
     return out;
 }

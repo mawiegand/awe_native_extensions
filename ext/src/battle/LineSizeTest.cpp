@@ -56,3 +56,17 @@ const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battl
 	return this->prioritiesOnFail;
 	
 }
+
+
+std::ostream& LineSizeTest::operator<<(std::ostream& out)  const
+{
+  out << "LineSizeTest: Success:";
+  for (unsigned int i=0; i < prioritiesOnSuccess.size(); i++) {
+    out << " " << prioritiesOnSuccess[i];
+  }
+  out << " Fail:";
+  for (unsigned int i=0; i < prioritiesOnFail.size(); i++) {
+    out << " " << prioritiesOnFail[i];
+  }
+  return out ;
+}

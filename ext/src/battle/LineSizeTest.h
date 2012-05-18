@@ -10,6 +10,9 @@ public:
 	void pushCategoryToPriorityOnFail(int category);
 	void pushCategoryToPriorityOnSuccess(int category);
 	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const;
+	
+	std::ostream& operator<<(std::ostream& out) const;
+
 private:
 	std::vector<int> prioritiesOnFail;
 	std::vector<int> prioritiesOnSuccess;
