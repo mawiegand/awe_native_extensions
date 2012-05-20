@@ -40,6 +40,9 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 		Army* enemyArmy = battle.combinedEnemyArmy(*factionIt);
 		enemyArmy->shuffle();
 		
+		//callculate the attack priorities for the unit types
+		std::map<int, std::vector<int> const*> priorityCache;
+		
 		//callculate the superiority bonus
 		//logMessage("callculate superiority bonus");
 		double superiorityBonus = 1.0;
@@ -80,18 +83,27 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 				int targetCategory = -1;
 				{
 					//logMessage("get attack priority");
-					const std::vector<int>& attackPriority = battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test((*factionIt), battle);
+					std::vector<int> const* attackPriorityPtr = 0;
+					std::map<int, std::vector<int> const*>::const_iterator cacheResult = priorityCache.find((*unitIt)->unitCategoryId) ;
+					if (cacheResult == priorityCache.end()) {
+						attackPriorityPtr = &(battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test((*factionIt), battle));
+						priorityCache[(*unitIt)->unitCategoryId] = attackPriorityPtr;
+					} else {
+						logMessage("loaded cached test data");
+						attackPriorityPtr = cacheResult->second;
+					}
+					//const std::vector<int>& attackPriority = 
 					//determine current target category
 					{
 						//logMessage("determine current target category");
 						std::vector<int>::const_iterator targetIt;
-						for (targetIt = attackPriority.begin(); targetIt != attackPriority.end(); targetIt++) {
+						for (targetIt = attackPriorityPtr->begin(); targetIt != attackPriorityPtr->end(); targetIt++) {
 							if (enemyArmy->hasLivingUnitsOfCategory(*targetIt)) {
 								targetCategory = (*targetIt);
-                break; // leave loop, because found a category that can be hit.
+								break; // leave loop, because found a category that can be hit.
 							}
 						}
-            logMessage("Unit of category " << (*unitIt)->unitCategoryId << " strikes enemy of category " << targetCategory << "." << std::endl);
+						logMessage("Unit of category " << (*unitIt)->unitCategoryId << " strikes enemy of category " << targetCategory << "." << std::endl);
 					}
 				}
 				
