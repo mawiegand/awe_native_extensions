@@ -8,11 +8,12 @@ int Army::numReferences = 0;
 
 Army::Army(int playerId) : playerId(playerId) {
 	numReferences++;
+	logMessage("CONSTRUCTION Army ref="<<numReferences);
 }
 
 Army::~Army() {
 	numReferences--;
-	logMessage("DECONSTRUCTION Army");
+	logMessage("DECONSTRUCTION Army ref="<<numReferences);
 }
 
 bool Army::isValid() const {

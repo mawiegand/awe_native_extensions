@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <TestResult.h>
 
 class Battle;
 class Faction;
@@ -10,9 +11,9 @@ class Faction;
 class PriorityTest {
 public:
 	virtual ~PriorityTest() {}
-	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const = 0;
-	
-  virtual std::ostream& toString(std::ostream& out) const = 0;
+	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle, TestResult& result) const = 0;
+
+	virtual std::ostream& toString(std::ostream& out) const = 0;
 };
 
 

@@ -7,7 +7,7 @@
 
 namespace util {
 double Random::random() {
-	return double(::random()) / double(RAND_MAX); // no arc4random on Ubuntu (without libbsd)
+	return double(::rand()) / double(RAND_MAX); // no arc4random on Ubuntu (without libbsd)
 }
 bool Random::random(double probability) {
 	assert(probability >= 0.0 && probability <= 1.0);
@@ -20,5 +20,9 @@ double Random::random01(double probability) {
 size_t Random::random(size_t start, size_t end) {
 	assert(start <= end);
 	return start + size_t(round(Random::random()*(double(end-start))));
+}
+
+void Random::setSeed(unsigned int seed) {
+	srand(seed);
 }
 }//namespace util

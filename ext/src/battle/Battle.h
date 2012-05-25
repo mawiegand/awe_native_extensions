@@ -7,6 +7,8 @@
 
 class Battle {
 public:
+	static int numReferences;
+public:
 	Battle();
 	virtual ~Battle();
 
@@ -29,6 +31,8 @@ public:
 
 	std::vector<Faction*> factions;
 	std::vector<UnitCategory*> categories;
+	
+	unsigned int seed;
 };
 
 template<class OStream>

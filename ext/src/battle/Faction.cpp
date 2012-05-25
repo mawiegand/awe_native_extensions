@@ -60,6 +60,20 @@ bool Faction::hasOfUnitsCategory(int category) const {
 	return false;
 }
 
+TestResult* Faction::getTestResult(size_t elem) {
+	if (elem >= testResults.size()) {
+		aweError("getTestResult(i) i is bigger then the mass of test results");
+	}
+	std::map<int, TestResult*>::iterator it = testResults.begin();
+	for (size_t i = 0; i < elem; i++) {
+		it++;
+	}
+	return it->second;
+}
+size_t Faction::testResultsSize() const {
+	return testResults.size();
+}
+
 Army* Faction::combinedArmy() {
 	Army* re = new Army(-1);
 	std::vector<Army*>::const_iterator armyIt;

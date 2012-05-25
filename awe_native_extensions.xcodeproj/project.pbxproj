@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91F6F3E156FB4D9005EEEE2 /* DamageLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91F6F3D156FB4D8005EEEE2 /* DamageLog.cpp */; };
+		B91F6F44156FC3C2005EEEE2 /* DamageLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91F6F3D156FB4D8005EEEE2 /* DamageLog.cpp */; };
+		B91F6F47156FD978005EEEE2 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91F6F46156FD978005EEEE2 /* TestResult.cpp */; };
+		B91F6F48156FDBA3005EEEE2 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B91F6F46156FD978005EEEE2 /* TestResult.cpp */; };
 		B9B5695C1553F3C8003E8E40 /* NoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569471553F3C8003E8E40 /* NoTest.cpp */; };
 		B9B5695D1553F3C8003E8E40 /* Army.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B569491553F3C8003E8E40 /* Army.cpp */; };
 		B9B5695E1553F3C8003E8E40 /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B5694B1553F3C8003E8E40 /* Battle.cpp */; };
@@ -43,6 +47,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B91F6F3A156F8708005EEEE2 /* TestResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
+		B91F6F3C156FB4BB005EEEE2 /* DamageLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DamageLog.h; sourceTree = "<group>"; };
+		B91F6F3D156FB4D8005EEEE2 /* DamageLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageLog.cpp; sourceTree = "<group>"; };
+		B91F6F46156FD978005EEEE2 /* TestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestResult.cpp; sourceTree = "<group>"; };
 		B9B569031553F330003E8E40 /* awe_native_extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awe_native_extensions; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B569191553F376003E8E40 /* battle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = battle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B569431553F3C8003E8E40 /* battle.i */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c.preprocessed; path = battle.i; sourceTree = "<group>"; };
@@ -145,26 +153,30 @@
 		B9B569461553F3C8003E8E40 /* battle */ = {
 			isa = PBXGroup;
 			children = (
-				B9B569541553F3C8003E8E40 /* PriorityTest.h */,
-				B9B569471553F3C8003E8E40 /* NoTest.cpp */,
-				B9B569481553F3C8003E8E40 /* NoTest.h */,
-				B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */,
-				B9B569501553F3C8003E8E40 /* LineSizeTest.h */,
-				B9B569551553F3C8003E8E40 /* UnitCategory.h */,
-				B9B56993155424DD003E8E40 /* Unit.cpp */,
-				B9B56994155424DD003E8E40 /* Unit.h */,
 				B9B569491553F3C8003E8E40 /* Army.cpp */,
 				B9B5694A1553F3C8003E8E40 /* Army.h */,
-				B9B569511553F3C8003E8E40 /* Faction.cpp */,
-				B9B569521553F3C8003E8E40 /* Faction.h */,
 				B9B5694B1553F3C8003E8E40 /* Battle.cpp */,
 				B9B5694C1553F3C8003E8E40 /* Battle.h */,
 				B9B5694D1553F3C8003E8E40 /* BattleCalculator.cpp */,
 				B9B5694E1553F3C8003E8E40 /* BattleCalculator.h */,
-				B9B569581553F3C8003E8E40 /* util */,
-				B9B5697B15540112003E8E40 /* UnitCategory.cpp */,
-				B9B5698F15540992003E8E40 /* DataException.h */,
+				B91F6F3D156FB4D8005EEEE2 /* DamageLog.cpp */,
+				B91F6F3C156FB4BB005EEEE2 /* DamageLog.h */,
 				B9B5699015540B8F003E8E40 /* DataException.cpp */,
+				B9B5698F15540992003E8E40 /* DataException.h */,
+				B9B569511553F3C8003E8E40 /* Faction.cpp */,
+				B9B569521553F3C8003E8E40 /* Faction.h */,
+				B9B5694F1553F3C8003E8E40 /* LineSizeTest.cpp */,
+				B9B569501553F3C8003E8E40 /* LineSizeTest.h */,
+				B9B569471553F3C8003E8E40 /* NoTest.cpp */,
+				B9B569481553F3C8003E8E40 /* NoTest.h */,
+				B9B569541553F3C8003E8E40 /* PriorityTest.h */,
+				B91F6F3A156F8708005EEEE2 /* TestResult.h */,
+				B9B56993155424DD003E8E40 /* Unit.cpp */,
+				B9B56994155424DD003E8E40 /* Unit.h */,
+				B9B5697B15540112003E8E40 /* UnitCategory.cpp */,
+				B9B569551553F3C8003E8E40 /* UnitCategory.h */,
+				B9B569581553F3C8003E8E40 /* util */,
+				B91F6F46156FD978005EEEE2 /* TestResult.cpp */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -290,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B5699115540B90003E8E40 /* DataException.cpp in Sources */,
+				B91F6F3E156FB4D9005EEEE2 /* DamageLog.cpp in Sources */,
+				B91F6F47156FD978005EEEE2 /* TestResult.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +320,9 @@
 				B9B5697A1553FE75003E8E40 /* main.cpp in Sources */,
 				B9B569641553F3C8003E8E40 /* Random.cpp in Sources */,
 				B9B5699215541329003E8E40 /* DataException.cpp in Sources */,
+				B91F6F48156FDBA3005EEEE2 /* TestResult.cpp in Sources */,
 				B9B5697C15540112003E8E40 /* UnitCategory.cpp in Sources */,
+				B91F6F44156FC3C2005EEEE2 /* DamageLog.cpp in Sources */,
 				B9B56995155424DE003E8E40 /* Unit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

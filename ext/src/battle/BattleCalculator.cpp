@@ -19,8 +19,12 @@ BattleCalculator::~BattleCalculator() {
 }
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
-  logMessage("IN BATTLE CALC");
-
+	
+	
+	logMessage("IN BATTLE CALC");
+	logMessage("set seed to"<<battle.seed);
+	//util::Random::setSeed(battle.seed);
+	
 	logMessage(battle);
 
 	if (battle.factions.size() != 2) {
@@ -86,7 +90,13 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 					std::vector<int> const* attackPriorityPtr = 0;
 					std::map<int, std::vector<int> const*>::const_iterator cacheResult = priorityCache.find((*unitIt)->unitCategoryId) ;
 					if (cacheResult == priorityCache.end()) {
-						attackPriorityPtr = &(battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test((*factionIt), battle));
+						(*factionIt)->testResults[(*unitIt)->unitCategoryId] = new TestResult();
+
+						attackPriorityPtr = &(battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test(
+							(*factionIt), 
+							battle, 
+							*((*factionIt)->testResults[(*unitIt)->unitCategoryId])
+						));
 						priorityCache[(*unitIt)->unitCategoryId] = attackPriorityPtr;
 					} else {
 						logMessage("loaded cached test data");

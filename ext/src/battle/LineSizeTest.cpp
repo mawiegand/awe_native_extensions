@@ -4,6 +4,7 @@
 #include <math.h>
 #include <util/Random.h>
 #include <util/ErrorHandling.h>
+#include <sstream>
 
 LineSizeTest::LineSizeTest(int testCategoryId) :  
 	testCategoryId(testCategoryId),
@@ -26,16 +27,22 @@ void LineSizeTest::pushCategoryToPriorityOnFail(int category) {
 void LineSizeTest::pushCategoryToPriorityOnSuccess(int category) {
 	prioritiesOnSuccess.push_back(category);
 }
-const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battle& battle) const {
+const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battle& battle, TestResult& result) const {
 
 	logMessage("LINE SIZE TEST TEST");
+	result.testType = "LineSizeTest";
 
 	size_t enemiesOfCategory = battle.enemyFactionsStartSizeOfCategory(testCategoryId, myFaction);
 	if (enemiesOfCategory <= 0) {
+		result.passed = true;
+		result.debugText = "success based on enemiesOfCategory";
 		return prioritiesOnSuccess;
 	}
+	
 	size_t myOfCategory = myFaction->startSizeOfCategory(testCategoryId);
 	if (myOfCategory <= 0) {
+		result.passed = false;
+		result.debugText = "failed based on myOfCategory";
 		return prioritiesOnFail;
 	}
 	
@@ -50,8 +57,20 @@ const std::vector<int>& LineSizeTest::test(const Faction* myFaction, const Battl
 	}
 	
 	if (util::Random::random(p)) {
+		result.passed = true;
+		{
+			std::stringstream sstr;
+			sstr<<"success based on experiment (p="<<p<<", proportion="<<propotion<<")";
+			result.debugText = sstr.str();
+		}
 		return this->prioritiesOnSuccess;
-	} 
+	}
+	{
+		std::stringstream sstr;
+		sstr<<"failed based on experiment (p="<<p<<", proportion="<<propotion<<")";
+		result.debugText = sstr.str();
+	}
+	result.passed = false;
 	
 	return this->prioritiesOnFail;
 	

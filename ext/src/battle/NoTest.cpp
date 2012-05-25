@@ -14,7 +14,10 @@ void NoTest::pushCategoryToPriority(int category) {
 	priorities.push_back(category);
 }
 
-const std::vector<int>& NoTest::test(const Faction* myFaction, const Battle& battle) const {
+const std::vector<int>& NoTest::test(const Faction* myFaction, const Battle& battle, TestResult& result) const {
+	result.passed = true;
+	result.testType = "NoTest";
+	result.debugText = "";
 	return priorities;
 }
 

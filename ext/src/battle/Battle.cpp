@@ -3,11 +3,15 @@
 #include <util/ErrorHandling.h>
 #include <set>
 
-Battle::Battle() {
+int Battle::numReferences = 0;
 
+Battle::Battle() : factions(), categories(), seed(0) {
+	numReferences++;
+	logMessage("CONSTRUCT Battle ref="<<numReferences);
 }
 Battle::~Battle() {
-	logMessage("DECONSTRUCTION Battle");
+	numReferences--;
+	logMessage("DECONSTRUCTION Battle ref="<<numReferences);
 }
 
 void Battle::addFaction(Faction* faction) {

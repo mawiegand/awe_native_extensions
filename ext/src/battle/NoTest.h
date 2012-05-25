@@ -10,7 +10,7 @@ public:
 	NoTest();
 	virtual ~NoTest();
 	void pushCategoryToPriority(int category);
-	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle) const;
+	virtual const std::vector<int>& test(const Faction* myFaction, const Battle& battle, TestResult& result) const;
 	
   virtual std::ostream& toString(std::ostream& out) const;
 	

@@ -2,6 +2,7 @@
 #define WackBattle_Faction_h
 
 #include <Army.h>
+#include <TestResult.h>
 
 class Faction {
 public:
@@ -18,9 +19,13 @@ public:
 	size_t startSizeOfCategory(int category) const;
 	bool hasOfUnitsCategory(int category) const;
 	
+	TestResult* getTestResult(size_t i);
+	size_t testResultsSize() const;
+	
 	Army* combinedArmy();
 	
 	std::vector<Army*> armies;
+	std::map<int, TestResult*> testResults;
 };
 
 template<class OStream>
