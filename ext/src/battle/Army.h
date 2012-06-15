@@ -30,8 +30,15 @@ public:
 	void getAllLivingUnitsOfCategory(int category, std::vector<Unit*>& result);
 	Army* getAllLivingUnitsOfCategory(int category);
 	
+	size_t getTotalCasualties() const;
+	size_t getTotalKills() const;
+	double getTotalDamageInflicted() const;
+	double getTotalDamageTaken() const;
+	size_t getTotalHitPoints() const;
+	
 	int numKills() const;
 	double sumNewExp() const;
+
 	
 	void shuffle();
 	void sortByInitiative();

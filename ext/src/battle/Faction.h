@@ -22,6 +22,12 @@ public:
 	TestResult* getTestResult(size_t i);
 	size_t testResultsSize() const;
 	
+	size_t getTotalCasualties() const;
+	size_t getTotalKills() const;
+	double getTotalDamageInflicted() const;
+	double getTotalDamageTaken() const;
+	size_t getTotalHitpoints() const;
+	
 	Army* combinedArmy();
 	
 	std::vector<Army*> armies;

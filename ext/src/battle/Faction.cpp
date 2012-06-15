@@ -74,6 +74,52 @@ size_t Faction::testResultsSize() const {
 	return testResults.size();
 }
 
+size_t Faction::getTotalCasualties() const {
+	size_t sum = 0;
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->getTotalCasualties();
+	}
+	return sum;
+}
+size_t Faction::getTotalKills() const {
+	size_t sum = 0;
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->getTotalKills();
+	}
+	return sum;
+}
+double Faction::getTotalDamageInflicted() const {
+	double sum = 0;
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->getTotalDamageInflicted();
+	}
+	return sum;
+}
+double Faction::getTotalDamageTaken() const {
+	double sum = 0;
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->getTotalDamageTaken();
+	}
+	return sum;
+}
+size_t Faction::getTotalHitpoints() const {
+	size_t sum = 0;
+	std::vector<Army*>::const_iterator it;
+	for (it = armies.begin(); it != armies.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->getTotalHitPoints();
+	}
+	return sum;
+}
+
 Army* Faction::combinedArmy() {
 	Army* re = new Army(-1);
 	std::vector<Army*>::const_iterator armyIt;

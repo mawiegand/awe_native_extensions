@@ -139,6 +139,53 @@ Army* Army::getAllLivingUnitsOfCategory(int category) {
 	return re;
 }
 
+size_t Army::getTotalCasualties() const {
+	size_t sum = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->numDeaths;
+	}
+	return sum;
+}
+size_t Army::getTotalKills() const {
+	size_t sum = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->numKills;
+	}
+	return sum;
+}
+double Army::getTotalDamageInflicted() const {
+	double sum = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->damageInflicted;
+	}
+	return sum;
+}
+double Army::getTotalDamageTaken() const {
+	double sum = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->damageTaken;
+	}
+	return sum;
+}
+size_t Army::getTotalHitPoints() const {
+	double sum = 0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += ((*it)->numUnitsAtStart-(*it)->numDeaths)*((size_t)(*it)->hitpoints);
+	}
+	return sum;
+}
+	
+
 int Army::numKills() const {
 	int num = 0;
 	std::vector<Unit*>::const_iterator it;
