@@ -31,6 +31,7 @@ public:
 	Army* getAllLivingUnitsOfCategory(int category);
 	
 	int numKills() const;
+	double sumNewExp() const;
 	
 	void shuffle();
 	void sortByInitiative();

@@ -23,7 +23,7 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 	
 	logMessage("IN BATTLE CALC");
 	logMessage("set seed to"<<battle.seed);
-	//util::Random::setSeed(battle.seed);
+	util::Random::setSeed(battle.seed);
 	
 	logMessage(battle);
 

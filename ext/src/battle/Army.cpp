@@ -149,6 +149,16 @@ int Army::numKills() const {
 	return num;
 }
 
+double Army::sumNewExp() const {
+	double sum = 0.0;
+	std::vector<Unit*>::const_iterator it;
+	for(it = units.begin(); it != units.end(); it++) {
+		awePtrCheck(*it);
+		sum += (*it)->newXp;
+	}
+	return sum;
+}
+
 void Army::shuffle() { logMessage("IN ARMY::SHUFFLE");
 	util::Random::shuffle<Unit*>(units);
 }
