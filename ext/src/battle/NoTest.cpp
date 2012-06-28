@@ -7,7 +7,7 @@ NoTest::NoTest() {
 }
 
 NoTest::~NoTest() {
-	logMessage("DECONSTRUCTION NoTest");
+	//logMessage("DECONSTRUCTION NoTest");
 }
 
 void NoTest::pushCategoryToPriority(int category) {

@@ -7,11 +7,11 @@ int Battle::numReferences = 0;
 
 Battle::Battle() : factions(), categories(), seed(0) {
 	numReferences++;
-	logMessage("CONSTRUCT Battle ref="<<numReferences);
+	//logMessage("CONSTRUCT Battle ref="<<numReferences);
 }
 Battle::~Battle() {
 	numReferences--;
-	logMessage("DECONSTRUCTION Battle ref="<<numReferences);
+	//logMessage("DECONSTRUCTION Battle ref="<<numReferences);
 }
 
 void Battle::addFaction(Faction* faction) {
@@ -28,8 +28,8 @@ size_t Battle::numFactions() const {
 }
 
 void Battle::addUnitCategory(UnitCategory* category) {
-	logMessage("addUnitCategory");
-	logMessage(*category);
+	//logMessage("addUnitCategory");
+	//logMessage(*category);
 	categories.push_back(category);
 }
 UnitCategory* Battle::getUnitCategory(size_t i) {

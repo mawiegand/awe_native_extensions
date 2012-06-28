@@ -8,12 +8,12 @@ int Army::numReferences = 0;
 
 Army::Army(int playerId) : playerId(playerId) {
 	numReferences++;
-	logMessage("CONSTRUCTION Army ref="<<numReferences);
+	//logMessage("CONSTRUCTION Army ref="<<numReferences);
 }
 
 Army::~Army() {
 	numReferences--;
-	logMessage("DECONSTRUCTION Army ref="<<numReferences);
+	//logMessage("DECONSTRUCTION Army ref="<<numReferences);
 }
 
 bool Army::isValid() const {
@@ -206,7 +206,7 @@ double Army::sumNewExp() const {
 	return sum;
 }
 
-void Army::shuffle() { logMessage("IN ARMY::SHUFFLE");
+void Army::shuffle() { //logMessage("IN ARMY::SHUFFLE");
 	util::Random::shuffle<Unit*>(units);
 }
 

@@ -10,7 +10,7 @@ DataException::DataException(const char* file, int line, const char* func, const
 }
 
 DataException::~DataException() throw() {
-	logMessage("DECONSTRUCTION DataException");
+	//logMessage("DECONSTRUCTION DataException");
 }
 
 const char* DataException::what() const throw() {

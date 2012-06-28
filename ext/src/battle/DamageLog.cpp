@@ -18,5 +18,5 @@ DamageLog::DamageLog() :
 }
 DamageLog::~DamageLog() {
 
-	logMessage("DECONSTRUCTION DamageLog");
+	//logMessage("DECONSTRUCTION DamageLog");
 }

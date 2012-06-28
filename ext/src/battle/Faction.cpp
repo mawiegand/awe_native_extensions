@@ -4,7 +4,7 @@
 
 Faction::Faction() {}
 Faction::~Faction() {
-	logMessage("DECONSTRUCTION Faction");
+	//logMessage("DECONSTRUCTION Faction");
 }
 
 bool Faction::isValid() const {

@@ -38,7 +38,7 @@ Unit::Unit() :
 	xpFactorPerUnit(0)
 {
 	numReferences++;
-	logMessage("CONSTRUCTION Unit ref="<<numReferences);
+	//logMessage("CONSTRUCTION Unit ref="<<numReferences);
 	
 }
 
@@ -64,12 +64,12 @@ Unit::Unit(const Unit& other) :
 	xpFactorPerUnit(other.xpFactorPerUnit)
 {
 	numReferences++;
-	logMessage("CONSTRUCTION Unit ref="<<numReferences);
+	//logMessage("CONSTRUCTION Unit ref="<<numReferences);
 }
 
 Unit::~Unit() {
 	numReferences--;
-	logMessage("DECONSTRUCTION Unit ref="<<numReferences);
+	//logMessage("DECONSTRUCTION Unit ref="<<numReferences);
 }
 
 bool Unit::isValid() const {
@@ -79,7 +79,7 @@ bool Unit::isValid() const {
 double Unit::numDeadUnits(double numHitting, double superiorityBonus, double currentEffectiveness, Unit* target) const {
   double modifiedDamage = superiorityBonus * baseDamage;
   
-	logMessage("EFFECTIVENESS="<<currentEffectiveness);
+	//logMessage("EFFECTIVENESS="<<currentEffectiveness);
   
 	return ((criticalDamage*criticalProbability)/target->hitpoints + MAX(0, modifiedDamage-target->armor)/(target->hitpoints) ) * currentEffectiveness * numHitting;
 }
@@ -111,7 +111,7 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 		//overkill
 		/*logMessage("numHittingUnits:");
 		logMessage(numHittingUnits);*/
-		logMessage("DEATHS="<<deaths);
+		//logMessage("DEATHS="<<deaths);
 		if (deaths + ((double)(*targetIt)->numDeaths) > (*targetIt)->numUnitsAtStart) {
 			log->overkill = true;
 			damageInflicted += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths)*(*targetIt)->hitpoints;
