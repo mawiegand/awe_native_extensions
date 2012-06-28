@@ -25,7 +25,7 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 	logMessage("set seed to"<<battle.seed);
 	util::Random::setSeed(battle.seed);
 	
-	logMessage(battle);
+	//logMessage(battle);
 
 	if (battle.factions.size() != 2) {
 		aweError("the number of in the battle factions is != 2");
