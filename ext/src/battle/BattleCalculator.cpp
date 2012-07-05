@@ -25,13 +25,13 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 	logMessage("set seed to"<<battle.seed);
 	util::Random::setSeed(battle.seed);
 	
-	//logMessage(battle);
+	logMessage(battle);
 
 	if (battle.factions.size() != 2) {
 		aweError("the number of in the battle factions is != 2");
 	}
 
-	//logMessage("START BATTLE");
+	logMessage("START BATTLE");
 	
 	std::vector<Faction*>::iterator factionIt;
 	for (factionIt = battle.factions.begin(); factionIt != battle.factions.end(); factionIt++) {
@@ -119,12 +119,12 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 				
 				//if there is a target damage it
 				if (targetCategory != -1) {
-					//logMessage("appling damage");
-					//logMessage(targetCategory);
+					logMessage("appling damage");
+					logMessage(targetCategory);
 					damagePossible = true;
 					//lets apply the damage
 					Army* targets = enemyArmy->getAllLivingUnitsOfCategory(targetCategory);
-					//logMessage(*targets);
+					logMessage(*targets);
 					(*unitIt)->applyDamage(superiorityBonus, targets);
 					delete targets;
 				}

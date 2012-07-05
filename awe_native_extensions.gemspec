@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'awe_native_extensions'
-  s.version     = '0.0.9'
-  s.date        = '2012-06-15'
+  s.version     = '0.0.10'
+  s.date        = '2012-07-05'
   s.summary     = "awe_native_extensions"
   s.description = "The native extensions for awe"
   s.authors     = ["Sascha Lange", "Patrick Fox", "Julian Schmid"]
