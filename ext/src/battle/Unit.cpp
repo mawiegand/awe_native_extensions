@@ -1,6 +1,7 @@
 #include <Unit.h>
 
 #include <util/ErrorHandling.h>
+#include <util/MemoryManagement.h>
 #include <Battle.h>
 #include <Army.h>
 #include <math.h>
@@ -48,7 +49,7 @@ Unit::Unit(const Unit& other) :
 	numHits(other.numHits),
 	numKills(other.numKills),
 	newXp(other.newXp),
-	damageLogs(other.damageLogs),
+	damageLogs(),
 	unitTypeId(other.unitTypeId),
 	unitCategoryId(other.unitCategoryId),
 	name(other.name),
@@ -64,7 +65,7 @@ Unit::Unit(const Unit& other) :
 	xpFactorPerUnit(other.xpFactorPerUnit)
 {
 	numReferences++;
-	//logMessage("CONSTRUCTION Unit ref="<<numReferences);
+	//logMessage("COPY CONSTRUCTION Unit ref="<<numReferences);
 }
 
 Unit::~Unit() {
@@ -93,9 +94,12 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 	double pFactor = (((double) numUnitsAtStart) - ((double) numHits))/numTargetsAlive; 
 	std::vector<Unit*>::iterator targetIt;
 	for (targetIt = targets->units.begin(); targetIt != targets->units.end(); targetIt++) {
+		//logMessage("\t\t\t\ttarget type_id="<<(*targetIt)->unitTypeId);
 		//create damage log
 		DamageLog* log = new DamageLog();
 		logs.push_back(log);
+		AWE_registerNewObject(log, DamageLog);
+		//fill with values
 		log->targetId = (*targetIt)->unitTypeId;
 		log->targetUnitCategoryId = (*targetIt)->unitCategoryId;
 		log->superorityBonus = superiorityBonus;
@@ -113,34 +117,44 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 		logMessage(numHittingUnits);*/
 		//logMessage("DEATHS="<<deaths);
 		if (deaths + ((double)(*targetIt)->numDeaths) > (*targetIt)->numUnitsAtStart) {
-			log->overkill = true;
+			//log->overkill = true;
 			damageInflicted += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths)*(*targetIt)->hitpoints;
 			//damageInflicted += deaths * (*targetIt)->hitpoints;
 			numKills += ((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths);
+			/*logMessage("\t\t\t\toverkill");
+			logMessage("\t\t\t\tkilled += "<<((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths));*/
 			
 			//callculate the hits that are left
 			//1 - living/Tote = Überschlag
 			double overkill = 1.0-(((*targetIt)->numUnitsAtStart-(*targetIt)->numDeaths)/deaths);
 			numHits +=  (numHittingUnits-(overkill*numHittingUnits));
+			//logMessage("\t\t\t\numHits += "<<(numHittingUnits-(overkill*numHittingUnits)));
 			
 			(*targetIt)->numDeaths = (*targetIt)->numUnitsAtStart;
 			(*targetIt)->damageTaken = (*targetIt)->numUnitsAtStart * (*targetIt)->hitpoints;
 			(*targetIt)->newXp = ((double)(*targetIt)->numUnitsAtStart) * (*targetIt)->xpFactorPerUnit;
 		//all damage has been dealt
 		} else {
+			//logMessage("\t\t\t\tpartialkill");
 			log->overkill = false;
 			damageInflicted += deaths * (*targetIt)->hitpoints;
+			//logMessage("\t\t\t\tpre deaths="<<deaths);
 			double p = deaths-floor(deaths);
 			log->restProbability = p;
 			if (p > 0.0) {
+				//logMessage("\t\t\t\texperiment with p="<<p);
 				if (util::Random::random(p)) {
+					//logMessage("\t\t\t\texperiment success");
 					log->experimentSuccess = true;
 					deaths = ceil(deaths);
+					
 				} else {
+					//logMessage("\t\t\t\texperiment failure");
 					log->experimentSuccess = false;
 					deaths = floor(deaths);
 				}
 			}
+			//logMessage("\t\t\t\tfinal deaths="<<deaths);
 			numKills += (size_t)deaths;
 			numHits += numHittingUnits;
 			(*targetIt)->numDeaths += deaths;

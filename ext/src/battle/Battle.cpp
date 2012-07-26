@@ -2,11 +2,17 @@
 
 #include <util/ErrorHandling.h>
 #include <set>
+#include <ctime>
+#include <sys/time.h>
 
 int Battle::numReferences = 0;
 
-Battle::Battle() : factions(), categories(), seed(0) {
+Battle::Battle() : factions(), categories(), seed((unsigned)time(0)) {
 	numReferences++;
+	
+	timeval t1;
+	gettimeofday(&t1, NULL);
+	seed = (t1.tv_sec * 1000) + (t1.tv_usec / 1000);
 	//logMessage("CONSTRUCT Battle ref="<<numReferences);
 }
 Battle::~Battle() {

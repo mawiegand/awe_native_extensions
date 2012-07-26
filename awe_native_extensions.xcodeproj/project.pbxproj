@@ -51,6 +51,7 @@
 		B91F6F3C156FB4BB005EEEE2 /* DamageLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DamageLog.h; sourceTree = "<group>"; };
 		B91F6F3D156FB4D8005EEEE2 /* DamageLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageLog.cpp; sourceTree = "<group>"; };
 		B91F6F46156FD978005EEEE2 /* TestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestResult.cpp; sourceTree = "<group>"; };
+		B938370615BFF36700A6BA93 /* RoundCalculationLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundCalculationLog.h; sourceTree = "<group>"; };
 		B9B569031553F330003E8E40 /* awe_native_extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = awe_native_extensions; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B569191553F376003E8E40 /* battle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = battle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B569431553F3C8003E8E40 /* battle.i */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c.preprocessed; path = battle.i; sourceTree = "<group>"; };
@@ -103,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B938370515BFF34D00A6BA93 /* logging */ = {
+			isa = PBXGroup;
+			children = (
+				B938370615BFF36700A6BA93 /* RoundCalculationLog.h */,
+			);
+			path = logging;
+			sourceTree = "<group>";
+		};
 		B9B568F81553F330003E8E40 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +162,7 @@
 		B9B569461553F3C8003E8E40 /* battle */ = {
 			isa = PBXGroup;
 			children = (
+				B938370515BFF34D00A6BA93 /* logging */,
 				B9B569491553F3C8003E8E40 /* Army.cpp */,
 				B9B5694A1553F3C8003E8E40 /* Army.h */,
 				B9B5694B1553F3C8003E8E40 /* Battle.cpp */,

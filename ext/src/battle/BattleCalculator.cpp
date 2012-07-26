@@ -7,6 +7,7 @@
 #include <util/Random.h>
 
 #include <util/ErrorHandling.h>
+#include <util/MemoryManagement.h>
 
 #include <iostream>
 
@@ -20,21 +21,20 @@ BattleCalculator::~BattleCalculator() {
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
 	
-	
 	logMessage("started BattleCalculator::callculateOneTick");
 	logMessage("set seed to"<<battle.seed);
 	util::Random::setSeed(battle.seed);
 	
-	logMessage(battle);
+	//logMessage(battle);
 
 	if (battle.factions.size() != 2) {
 		aweError("the number of in the battle factions is != 2");
 	}
-
-	logMessage("START BATTLE");
 	
 	std::vector<Faction*>::iterator factionIt;
 	for (factionIt = battle.factions.begin(); factionIt != battle.factions.end(); factionIt++) {
+
+		logMessage("\t"<<"callculating damage for faction");
 
 		//callculate the combined armies
 		//logMessage("callculate the combined armies");
@@ -71,16 +71,17 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 		bool damagePossible = true;
 		int round = 1;
 		while (damagePossible) {
-			//logMessage("Round:");
-			//logMessage(round);
+			//logMessage("\t\tdamage round");
 			round++;
 			//logMessage("apply damage loop");
 			damagePossible = false;
 			std::vector<Unit*>::iterator unitIt;
 			for (unitIt = ownArmy->units.begin(); unitIt != ownArmy->units.end(); unitIt++) {
+				//logMessage("\t\t\tunit round typeId="<<(*unitIt)->unitTypeId);
 				awePtrCheck(*unitIt);
 				//ignore units that can't hit anymore
 				if (((double)(*unitIt)->numUnitsAtStart) - (*unitIt)->numHits <= 0.5) {
+					//logMessage("\t\t\t\tignoring, units-hits <= 0.5");
 					continue;
 				}
 				//get attack priority
@@ -90,12 +91,14 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 					std::vector<int> const* attackPriorityPtr = 0;
 					std::map<int, std::vector<int> const*>::const_iterator cacheResult = priorityCache.find((*unitIt)->unitCategoryId) ;
 					if (cacheResult == priorityCache.end()) {
-						(*factionIt)->testResults[(*unitIt)->unitCategoryId] = new TestResult();
+						TestResult* testResult = new TestResult();
+						(*factionIt)->testResults[(*unitIt)->unitCategoryId] = testResult;
+						AWE_registerNewObject(testResult, TestResult);
 
 						attackPriorityPtr = &(battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test(
 							(*factionIt), 
 							battle, 
-							*((*factionIt)->testResults[(*unitIt)->unitCategoryId])
+							(*testResult)
 						));
 						priorityCache[(*unitIt)->unitCategoryId] = attackPriorityPtr;
 					} else {
@@ -119,12 +122,12 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 				
 				//if there is a target damage it
 				if (targetCategory != -1) {
-					logMessage("appling damage");
-					logMessage(targetCategory);
+					//logMessage("appling damage");
+					//logMessage(targetCategory);
 					damagePossible = true;
 					//lets apply the damage
 					Army* targets = enemyArmy->getAllLivingUnitsOfCategory(targetCategory);
-					logMessage(*targets);
+					//logMessage(*targets);
 					(*unitIt)->applyDamage(superiorityBonus, targets);
 					delete targets;
 				}
@@ -135,5 +138,6 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 		delete enemyArmy;
 		delete ownArmy;
 	}
+	logMessage("finished BattleCalculator::callculateOneTick");
 	return true;
 }
