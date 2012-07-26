@@ -8,6 +8,9 @@ FileUtils.cp(Dir['../src/battle/**/*.cpp'], '.')
 
 raise "swig failed not create wrapper class" if (!File.exist?("battle_wrap.cxx"))
 
+def add_define(name)
+	$defs.push("-D#{name}")
+end
 
 LIBDIR      = Config::CONFIG['libdir']
 INCLUDEDIR  = Config::CONFIG['includedir']
@@ -43,5 +46,7 @@ LIB_DIRS = [
 ]
  
 dir_config('stree', HEADER_DIRS, LIB_DIRS)
+
+add_define("SWIG");
 
 create_makefile('awe_native_extensions/battle')
