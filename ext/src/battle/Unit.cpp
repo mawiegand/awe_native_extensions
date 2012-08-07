@@ -7,6 +7,9 @@
 #include <math.h>
 #include <util/Random.h>
 #include <sstream>
+#include <cmath>
+
+using namespace std;
 
 #define MAX(a,b)   ((a) > (b) ? (a) : (b))
 
@@ -77,12 +80,24 @@ bool Unit::isValid() const {
 	return unitTypeId >= 0 && unitCategoryId >= 0 && numUnitsAtStart >= numDeaths;
 }
 
+static double estimate_hit_probability(double att, double def)
+{
+  util::Random rand = util::Random();
+  unsigned int repititions = 100;
+  int hits = 0;
+  for (unsigned int i=0; i < repititions; i++) {
+    hits += floor(rand.random() * att) /* +1 */ > floor(rand.random() * def) /* +1 */  ? 1 : 0 ;
+  }
+  return hits / (1.0 * repititions);
+}
+
 double Unit::numDeadUnits(double numHitting, double superiorityBonus, double currentEffectiveness, Unit* target) const {
-  double modifiedDamage = superiorityBonus * baseDamage;
-  
-	//logMessage("EFFECTIVENESS="<<currentEffectiveness);
-  
-	return ((criticalDamage*criticalProbability)/target->hitpoints + MAX(0, modifiedDamage-target->armor)/(target->hitpoints) ) * currentEffectiveness * numHitting;
+  double att       = baseDamage * (currentEffectiveness + superiorityBonus);
+  double def       = target->armor;
+  double hitChance = estimate_hit_probability(att, def);
+
+  double damage    = baseDamage;  // add damage modifiers here, as soon as available
+	return ((criticalDamage*criticalProbability) + (damage*hitChance))/(target->hitpoints) * numHitting;
 }
 
 void Unit::applyDamage(double superiorityBonus, Army* targets) {
@@ -175,6 +190,7 @@ double Unit::getEffectivenessFor(int type) const {
 		return it->second;
 	}
 	aweError("missing effectiveness value for type ");
+  return 1.0;
 }
 
 void Unit::resetDamageLogs() {

@@ -11,13 +11,14 @@
 
 #include <iostream>
 
-BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFactor), superiorityFactor(0.33), superiorityBonusMin(1.0), superiorityBonusMax(2.0) {
+BattleCalculator::BattleCalculator(double damageFactor) : damageFactor(damageFactor), superiorityFactor(0.05), superiorityBonusMin(-0.25), superiorityBonusMax(0.5) {
 	
 }
 
 BattleCalculator::~BattleCalculator() {
 	//logMessage("DECONSTRUCTION BattleCalculator");
 }
+
 
 bool BattleCalculator::callculateOneTick(Battle& battle) const {
 	
@@ -49,13 +50,13 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 		
 		//callculate the superiority bonus
 		//logMessage("callculate superiority bonus");
-		double superiorityBonus = 1.0;
+		double superiorityBonus = 0.0;
 		{
 			double enemyFactionStartSize = (double) enemyArmy->startSize();
 			
 			double superiorityProportion =  (((double) (*factionIt)->startSize()) - enemyFactionStartSize)/enemyFactionStartSize;
 			
-			superiorityBonus = 1 + superiorityProportion*superiorityFactor;
+			superiorityBonus = superiorityProportion*superiorityFactor;
 			
 			if (superiorityBonus > superiorityBonusMax) {
 				superiorityBonus = superiorityBonusMax;
