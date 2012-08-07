@@ -82,13 +82,8 @@ bool Unit::isValid() const {
 
 static double estimate_hit_probability(double att, double def)
 {
-  util::Random rand = util::Random();
-  unsigned int repititions = 100;
-  int hits = 0;
-  for (unsigned int i=0; i < repititions; i++) {
-    hits += floor(rand.random() * att) /* +1 */ > floor(rand.random() * def) /* +1 */  ? 1 : 0 ;
-  }
-  return hits / (1.0 * repititions);
+  double frac = att/def;
+  return frac <= 1 ? 0.5 * frac : 1-1/(2*frac);
 }
 
 double Unit::numDeadUnits(double numHitting, double superiorityBonus, double currentEffectiveness, Unit* target) const {
