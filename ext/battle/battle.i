@@ -21,6 +21,8 @@
  #include "../src/battle/Battle.h"
  #include "../src/battle/BattleCalculator.h"
  #include "../src/battle/util/Random.h"
+ #include "../src/battle/util/MemoryManagement.h"
+ #include "../src/battle/util/ErrorHandling.h"
  %}
  
  %trackobjects;
@@ -48,6 +50,17 @@
  
  %header %{
  #include <iostream>
+ 
+//#include "../src/battle/util/MemoryManagement.h"
+namespace awe {
+	void MemoryManagement::registerNewObject(DamageLog* obj) {
+		SWIG_Ruby_NewPointerObj((void*)obj, SWIGTYPE_p_DamageLog, SWIG_POINTER_OWN);
+	}
+	void MemoryManagement::registerNewObject(TestResult* obj) {
+		SWIG_Ruby_NewPointerObj((void*)obj, SWIGTYPE_p_TestResult, SWIG_POINTER_OWN);
+	}
+}
+ 
 static void mark_Battle(void* ptr) {
  //std::cout<<"GCLOG Battle MARK"<<std::endl;
  Battle* battle = (Battle*) ptr;

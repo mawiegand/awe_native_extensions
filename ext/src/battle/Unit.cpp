@@ -113,7 +113,12 @@ void Unit::applyDamage(double superiorityBonus, Army* targets) {
 		//create damage log
 		DamageLog* log = new DamageLog();
 		logs.push_back(log);
-		AWE_registerNewObject(log, DamageLog);
+		awe::MemoryManagement::registerNewObject(log);
+		//aweRegisterNewObject(log, DamageLog);
+		#ifdef SWIG
+		//swig_type_info asdf;
+		//SWIG_NewPointerObj((void*)log, SWIGTYPE_p_DamageLog, SWIG_POINTER_OWN);
+		#endif
 		//fill with values
 		log->targetId = (*targetIt)->unitTypeId;
 		log->targetUnitCategoryId = (*targetIt)->unitCategoryId;

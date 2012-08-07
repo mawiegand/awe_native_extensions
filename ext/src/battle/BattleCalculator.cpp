@@ -94,7 +94,11 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 					if (cacheResult == priorityCache.end()) {
 						TestResult* testResult = new TestResult();
 						(*factionIt)->testResults[(*unitIt)->unitCategoryId] = testResult;
-						AWE_registerNewObject(testResult, TestResult);
+						awe::MemoryManagement::registerNewObject(testResult);
+						//aweRegisterNewObject(testResult, TestResult);
+						#ifdef SWIG
+							//SWIG_NewPointerObj((void*)testResult, SWIGTYPE_p_TestResult, SWIG_POINTER_OWN);
+						#endif
 
 						attackPriorityPtr = &(battle.getUnitCategoryById((*unitIt)->unitCategoryId)->test->test(
 							(*factionIt), 
