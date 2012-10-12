@@ -68,15 +68,15 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
     {
 			int enemySize = enemyArmy->startSize();
       int ownSize   = (*factionIt)->startSize();
-      if (ownSize < 20 && enemySize < 20) {
+      if (ownSize < 25 && enemySize < 25) {
         if (ownSize < 5 && enemySize < 5) {
           endFightBonus = 3.0;
         }
         else if (ownSize < 10 && enemySize < 10) {
-          endFightBonus = 1.0;
+          endFightBonus = 1.2;
         }
         else if (ownSize < 15 && enemySize < 15) {
-          endFightBonus = 0.75;
+          endFightBonus = 0.8;
         } 
         else {
           endFightBonus = 0.4;
