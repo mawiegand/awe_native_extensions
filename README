@@ -7,4 +7,10 @@ To test if the gem was installed successfully use:
 
 	ruby -rubygems addtitional/ruby/test.rb 
 	
-hf
+
+In order to compile the extensions you need SWIG. On Ubuntu:
+
+	apt-get install swig
+
+
+

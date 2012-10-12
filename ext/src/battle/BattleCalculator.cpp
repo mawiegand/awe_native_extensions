@@ -64,6 +64,25 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 				superiorityBonus = superiorityBonusMin;
 			}
 		}
+    double endFightBonus = 0.0;   // used to speed up battle with very small forces
+    {
+			int enemySize = enemyArmy->startSize();
+      int ownSize   = (*factionIt)->startSize();
+      if (ownSize < 20 && enemySize < 20) {
+        if (ownSize < 5 && enemySize < 5) {
+          endFightBonus = 3.0;
+        }
+        else if (ownSize < 10 && enemySize < 10) {
+          endFightBonus = 1.0;
+        }
+        else if (ownSize < 15 && enemySize < 15) {
+          endFightBonus = 0.75;
+        } 
+        else {
+          endFightBonus = 0.4;
+        }        
+      }
+    }
 		
 		//logMessage("APPLY DAMAGE");
 
@@ -133,7 +152,7 @@ bool BattleCalculator::callculateOneTick(Battle& battle) const {
 					//lets apply the damage
 					Army* targets = enemyArmy->getAllLivingUnitsOfCategory(targetCategory);
 					//logMessage(*targets);
-					(*unitIt)->applyDamage(superiorityBonus, targets);
+					(*unitIt)->applyDamage(superiorityBonus + endFightBonus, targets);
 					delete targets;
 				}
 				
